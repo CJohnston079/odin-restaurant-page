@@ -62,7 +62,7 @@ header {
 
     color: white;
 
-    background-color: blue;
+    background-color: black;
 }
 
 header h1 {
@@ -95,4 +95,11 @@ main {
 section {
     height: 100%;
     padding: 2rem;
+}
+
+#hero {
+    background: url(./banner.jpg);
+    background-position: left center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
