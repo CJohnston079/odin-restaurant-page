@@ -161,5 +161,20 @@ section {
 }
 
 #hero button {
+    border: solid 2px transparent;
+    border-radius: 2px;
+    padding: 1rem 2rem;
     width: fit-content;
+
+    font-family: 'Poppins';
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: white;
+    
+    background-color: hsl(5, 100%, 35%);
+
+    transition: border 400ms, outline 400ms;
+    cursor: pointer;
 }
