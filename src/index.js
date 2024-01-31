@@ -24,4 +24,10 @@ section.appendChild(h1);
 section.appendChild(p);
 section.appendChild(button);
 
+const children = section.children;
+
+for (let i = 0; i < children.length; i += 1) {
+    children[i].style.animationDelay = 200 * (i + 1) + "ms";
+}
+
 contentContainer.appendChild(section);

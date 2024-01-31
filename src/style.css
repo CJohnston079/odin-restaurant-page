@@ -188,8 +188,14 @@ section {
     letter-spacing: -0.05rem;
 }
 
+#hero * {
+    animation: fade 1200ms, slideX 1200ms;
+    animation-fill-mode: backwards;
+}
+
 #hero h1 span:last-child {
     font-weight: 900;
+    animation-delay: 200ms;
 }
 
 #hero p {
@@ -216,4 +222,14 @@ section {
 
 #hero button:hover {
     filter: brightness(1.2);
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideX {
+    0% { transform: translateX(2rem); }
+    100% { transform: translateX(0); }
 }
