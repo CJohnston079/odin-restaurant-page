@@ -86,10 +86,11 @@ header h1 {
 
 nav {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 nav button {
+    margin: auto 0.5rem;
     padding: 0.5rem 0;
     border-bottom: solid 3px transparent;
 
@@ -118,15 +119,26 @@ nav button:active {
     transition: border 100ms, color 100ms;
 }
 
-/* nav button:last-child {
+nav button:last-child {
+    margin: 0;
+    border: solid 3px white;
     border-radius: 4px;
-    padding: 1rem 2rem;
-    width: fit-content;
+    padding: 0.5rem 1rem;
     
-    
-    transition: background-color 400ms;
-    cursor: pointer;
-} */
+    transform: translateY(0);
+    transition: background-color 400ms, border-color 400ms, filter 400ms;
+}
+
+nav button:last-child:hover {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+nav button:last-child:active {
+    color: white;
+    filter: brightness(1.5);
+    transition: filter 100ms;
+}
 
 main {
     margin-top: 7rem;
