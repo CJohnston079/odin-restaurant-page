@@ -46,6 +46,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button {
+    border: none;
+    padding-inline: 0;
+}
+button:focus-within {
+    outline: none;
+}
+
+:root {
+    --accent-color: hsl(5, 100%, 55%)
+}
 
 body {
     font-family: 'Playfair Display', serif;
@@ -75,38 +86,49 @@ header h1 {
 
 nav {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 nav button {
-    padding: 0.5rem 1rem;
-    border: solid 2px transparent;
-    border-radius: 4px;
+    padding: 0.5rem 0;
+    border-bottom: solid 3px transparent;
 
-    color: white;
     font-family: 'Poppins';
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    color: white;
 
     background: none;
 
-    transition: border-color 400ms;
+    transform: translateY(1.5px);
+    transition: border 200ms, color 200ms;
     cursor: pointer;
 }
 
-nav button:last-child {
-    border: solid 2px white;
-    border-radius: 4px;
+nav button:hover {
+    border-bottom: solid 3px white;
+    transition: border 400ms, color 400ms;
 }
 
-nav button:hover {
-    border: solid 2px white;
+nav button.active,
+nav button:active {
+    border-bottom: solid 3px var(--accent-color);
+    color: var(--accent-color);
+    transition: border 100ms, color 100ms;
 }
+
+/* nav button:last-child {
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    width: fit-content;
+    
+    
+    transition: background-color 400ms;
+    cursor: pointer;
+} */
 
 main {
-    /* height: calc(100vh - 11rem); */
     margin-top: 7rem;
     height: calc(100vh - 7rem);
 }
@@ -162,20 +184,22 @@ section {
 }
 
 #hero button {
-    border: solid 2px transparent;
-    border-radius: 2px;
+    border-radius: 4px;
     padding: 1rem 2rem;
     width: fit-content;
 
     font-family: 'Poppins';
     font-size: 1rem;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
     color: white;
     
     background-color: hsl(5, 100%, 35%);
-
-    transition: border 400ms, outline 400ms;
+    background: linear-gradient(150deg, hsl(5, 100%, 55%), hsl(5, 100%, 35%));
+    
+    transition: filter 400ms;
     cursor: pointer;
+}
+
+#hero button:hover {
+    filter: brightness(1.2);
 }
