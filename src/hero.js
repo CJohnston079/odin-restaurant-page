@@ -26,7 +26,7 @@ function createHeroSection() {
     const children = section.children;
 
     for (let i = 0; i < children.length; i += 1) {
-        children[i].style.animationDelay = 200 * (i + 1) + "ms";
+        children[i].style.animationDelay = 400 * i + "ms";
     }
 
     return section;
