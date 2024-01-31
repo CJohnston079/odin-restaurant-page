@@ -160,7 +160,7 @@ section {
     align-content: center;
     gap: 2rem;
 
-    background: url(./banner.jpg);
+    background: url(./assets/images/hero-background.jpg);
     background-position: center bottom;
     background-size: cover;
     background-repeat: no-repeat;
