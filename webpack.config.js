@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src/js/index.js',
-        hero: './src/js/hero.js'
+        index: './src/modules/index.js',
+        hero: ['./src/modules//hero/hero.js', './src/modules/hero/hero.css'],
     },
     devtool: 'inline-source-map',
     devServer: {

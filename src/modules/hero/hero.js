@@ -1,3 +1,5 @@
+import './hero.css'
+
 function createHeroSection() {
     const section = document.createElement("section");
     section.id = "hero";
