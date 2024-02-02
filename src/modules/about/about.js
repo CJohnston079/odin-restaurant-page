@@ -1,12 +1,10 @@
 import './about.css'
 
-const createAboutSection = function() {
+const createBanner = function() {
     const section = document.createElement("section");
-    section.id = "about";
+    section.id = "banner";
 
     createH1(section);
-    createImg(section);
-    createP(section);
 
     return section;
 }
@@ -16,6 +14,16 @@ const createH1 = function(section) {
     h1.textContent = "About Us";
 
     section.appendChild(h1);
+}
+
+const createAboutSection = function() {
+    const section = document.createElement("section");
+    section.id = "about";
+
+    createImg(section);
+    createP(section);
+
+    return section;
 }
 
 const createImg = function(section) {
@@ -39,4 +47,4 @@ const createP = function(section) {
     }
 }
 
-export default createAboutSection;
+export { createBanner, createAboutSection };

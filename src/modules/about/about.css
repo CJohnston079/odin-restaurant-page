@@ -1,5 +1,25 @@
-section {
-    background-image: url(../../assets/images/banner-background.jpg);
+#about {
+    height: auto;
+    background-color: black;
+}
+
+#banner {
+    display: flex;
+    align-items: center;
+
+    height: 20vh;
+
+    background-image: url(../../assets/images/hero-background.jpg), linear-gradient(60deg, hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0) 50%);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+#about h1 {
+    padding: 4rem;
+
+    font-weight: 100;
 }
 
 img {
