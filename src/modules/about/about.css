@@ -1,3 +1,7 @@
 section {
-    background-image: url(../../assets/images/iStock-1041411224.jpg);
+    background-image: url(../../assets/images/banner-background.jpg);
+}
+
+img {
+    height: 50vh;
 }

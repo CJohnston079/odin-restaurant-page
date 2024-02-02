@@ -5,6 +5,7 @@ const createAboutSection = function() {
     section.id = "about";
 
     createH1(section);
+    createImg(section);
     createP(section);
 
     return section;
@@ -15,6 +16,13 @@ const createH1 = function(section) {
     h1.textContent = "About Us";
 
     section.appendChild(h1);
+}
+
+const createImg = function(section) {
+    const img = document.createElement('img');
+    img.src = '../assets/images/restaurant-birds-eye.jpg';
+
+    section.appendChild(img);
 }
 
 const createP = function(section) {
