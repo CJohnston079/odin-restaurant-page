@@ -1,14 +1,23 @@
 import './about.css'
 
-function createAboutSection() {
+const createAboutSection = function() {
     const section = document.createElement("section");
     section.id = "about";
 
+    createH1(section);
+    createP(section);
+
+    return section;
+}
+
+const createH1 = function(section) {
     const h1 = document.createElement("h1");
     h1.textContent = "About Us";
 
     section.appendChild(h1);
+}
 
+const createP = function(section) {
     const paragraphContents = [
         'Aliquam sem et tortor consequat id. Viverra adipiscing at in tellus integer. Aliquam vestibulum morbi blandit cursus. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Mauris ultrices eros in cursus turpis.',
         'Vel quam elementum pulvinar etiam non. Donec adipiscing tristique risus nec feugiat in fermentum posuere urna. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Nulla facilisi etiam dignissim diam.',
@@ -20,8 +29,6 @@ function createAboutSection() {
         p.textContent = content;
         section.appendChild(p);
     }
-
-    return section;
 }
 
 export default createAboutSection;
