@@ -29,13 +29,17 @@ const createAboutSection = function() {
 const createImg = function(section) {
     const container = document.createElement('div');
     container.classList.add('img-container');
-    
+
     section.appendChild(container);
 }
 
 const createP = function(section) {
     const container = document.createElement('div');
     container.classList.add('p-container');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = 'Fabula nostra'
+    container.appendChild(h2)
 
     const paragraphContents = [
         'Aliquam sem et tortor consequat id. Viverra adipiscing at in tellus integer. Aliquam vestibulum morbi blandit cursus. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Mauris ultrices eros in cursus turpis.',
