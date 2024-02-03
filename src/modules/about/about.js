@@ -27,13 +27,17 @@ const createAboutSection = function() {
 }
 
 const createImg = function(section) {
+    const container = document.createElement('div');
     const img = document.createElement('img');
     img.src = '../assets/images/restaurant-birds-eye.jpg';
 
-    section.appendChild(img);
+    container.append(img)
+    section.appendChild(container);
 }
 
 const createP = function(section) {
+    const container = document.createElement('div');
+
     const paragraphContents = [
         'Aliquam sem et tortor consequat id. Viverra adipiscing at in tellus integer. Aliquam vestibulum morbi blandit cursus. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Mauris ultrices eros in cursus turpis.',
         'Vel quam elementum pulvinar etiam non. Donec adipiscing tristique risus nec feugiat in fermentum posuere urna. Ornare massa eget egestas purus viverra accumsan in nisl nisi. Nulla facilisi etiam dignissim diam.',
@@ -43,8 +47,10 @@ const createP = function(section) {
     for (const content of paragraphContents) {
         const p = document.createElement('p');
         p.textContent = content;
-        section.appendChild(p);
+        container.appendChild(p);
     }
+
+    section.appendChild(container);
 }
 
 export { createBanner, createAboutSection };
