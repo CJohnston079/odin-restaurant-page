@@ -1,4 +1,8 @@
 #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
     height: auto;
     background-color: black;
 }
@@ -18,10 +22,17 @@
 
 #about h1 {
     padding: 4rem;
-
     font-weight: 100;
 }
 
-img {
-    height: 50vh;
+.img-container {
+    width: 100%;
+
+    background-image: url(../../assets/images/restaurant-birds-eye.jpg);
+    background-size: cover;
+    background-position: bottom right;
+}
+
+p {
+    margin: 1rem;
 }

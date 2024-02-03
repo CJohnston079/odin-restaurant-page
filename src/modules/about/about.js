@@ -28,15 +28,17 @@ const createAboutSection = function() {
 
 const createImg = function(section) {
     const container = document.createElement('div');
-    const img = document.createElement('img');
-    img.src = '../assets/images/restaurant-birds-eye.jpg';
+    container.classList.add('img-container');
+    // const img = document.createElement('img');
+    // img.src = '../assets/images/restaurant-birds-eye.jpg';
 
-    container.append(img)
+    // container.append(img)
     section.appendChild(container);
 }
 
 const createP = function(section) {
     const container = document.createElement('div');
+    container.classList.add('p-container');
 
     const paragraphContents = [
         'Aliquam sem et tortor consequat id. Viverra adipiscing at in tellus integer. Aliquam vestibulum morbi blandit cursus. Pellentesque pulvinar pellentesque habitant morbi tristique senectus. Mauris ultrices eros in cursus turpis.',
