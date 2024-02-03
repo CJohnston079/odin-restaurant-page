@@ -29,10 +29,7 @@ const createAboutSection = function() {
 const createImg = function(section) {
     const container = document.createElement('div');
     container.classList.add('img-container');
-    // const img = document.createElement('img');
-    // img.src = '../assets/images/restaurant-birds-eye.jpg';
-
-    // container.append(img)
+    
     section.appendChild(container);
 }
 
