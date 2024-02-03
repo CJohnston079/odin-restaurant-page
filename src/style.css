@@ -145,15 +145,13 @@ nav button:last-child:active {
 
 main {
     margin-top: 7rem;
-    height: calc(100vh - 7rem);
-
     color: white;
 }
 
 section {
     height: 100%;
     padding: 4rem;
-    padding: 0rem max(10vw, 4rem);
+    padding: 4rem max(10vw, 4rem);
 
     background-position: center bottom;
     background-size: cover;
