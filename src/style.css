@@ -60,6 +60,7 @@ button:focus-within {
 
 body {
     font-family: 'Playfair Display', serif;
+    background-color: black;
 }
 
 header {
