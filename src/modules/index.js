@@ -12,6 +12,12 @@ const clearContent = function() {
     }
 }
 
+const navButtons = document.querySelector('nav').children;
+
+for (let i = 0; i < navButtons.length; i++) {
+    navButtons[i].addEventListener('mousedown', clearContent);
+}
+
 // contentContainer.appendChild(hero);
 contentContainer.appendChild(banner);
 contentContainer.appendChild(about);
