@@ -6,6 +6,12 @@ const hero = createHeroSection();
 const banner = createBanner();
 const about = createAboutSection();
 
+const clearContent = function() {
+    while (contentContainer.firstChild) {
+        contentContainer.removeChild(contentContainer.lastChild);
+    }
+}
+
 // contentContainer.appendChild(hero);
 contentContainer.appendChild(banner);
 contentContainer.appendChild(about);
