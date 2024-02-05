@@ -18,6 +18,13 @@ for (let i = 0; i < navButtons.length; i++) {
     navButtons[i].addEventListener('mousedown', clearContent);
 }
 
-// contentContainer.appendChild(hero);
-contentContainer.appendChild(banner);
-contentContainer.appendChild(about);
+navButtons[0].addEventListener('mousedown', () => {
+    contentContainer.appendChild(hero);
+});
+    
+navButtons[1].addEventListener('mousedown', () => {
+    contentContainer.appendChild(banner);
+    contentContainer.appendChild(about);
+})
+
+document.onload(contentContainer.appendChild(hero));
