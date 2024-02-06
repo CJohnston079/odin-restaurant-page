@@ -33,6 +33,9 @@ const navButtons = {
 }
 
 navButtons.hero.addEventListener('mousedown', () => {
+    if (activeSection === 'hero') {
+        return;
+    }
     contentContainer.removeChild(contentContainer.lastChild);
     removeChildElements(banner);
     createHeroSection(banner);
@@ -40,6 +43,9 @@ navButtons.hero.addEventListener('mousedown', () => {
 });
 
 navButtons.about.addEventListener('mousedown', () => {
+    if (activeSection === 'about') {
+        return;
+    }
     banner.removeAttribute('id');
     removeChildElements(banner);
 
