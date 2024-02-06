@@ -143,6 +143,11 @@ nav button:last-child:active {
     transition: filter 100ms;
 }
 
+nav.active {
+    color: var(--accent-color);
+    border-color: (var(--accent-color));
+}
+
 main {
     margin-top: 7rem;
     color: white;

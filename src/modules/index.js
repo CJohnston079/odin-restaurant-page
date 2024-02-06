@@ -13,15 +13,22 @@ const removeChildElements = function(parentElement) {
     }
 }
 
-const navButtons = document.querySelector('nav').children;
+const toggleActiveNav = function(navButton) {
+    navButton.classList.toggle('active')
+}
 
-navButtons[0].addEventListener('mousedown', () => {
+const navButtons = {
+    hero: document.querySelector('nav').children[0],
+    about: document.querySelector('nav').children[1]
+}
+
+navButtons.hero.addEventListener('mousedown', () => {
     contentContainer.removeChild(contentContainer.lastChild);
     removeChildElements(banner);
     createHeroSection(banner);
 });
     
-navButtons[1].addEventListener('mousedown', () => {
+navButtons.about.addEventListener('mousedown', () => {
     banner.removeAttribute('id');
     removeChildElements(banner);
 
