@@ -1,5 +1,6 @@
+import createBanner from "./banner/banner";
 import createHeroSection from "./hero/hero";
-import { createBanner, createAboutSection } from "./about/about";
+import createAboutSection from "./about/about";
 
 const contentContainer = document.querySelector('#content');
 const hero = createHeroSection();
@@ -27,4 +28,4 @@ navButtons[1].addEventListener('mousedown', () => {
     contentContainer.appendChild(about);
 })
 
-document.onload(contentContainer.appendChild(hero));
+contentContainer.appendChild(hero);

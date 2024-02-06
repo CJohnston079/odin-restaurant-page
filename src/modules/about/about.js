@@ -1,20 +1,6 @@
+import createBanner from '../banner/banner';
+
 import './about.css'
-
-const createBanner = function() {
-    const section = document.createElement("section");
-    section.id = "banner";
-
-    createH1(section);
-
-    return section;
-}
-
-const createH1 = function(section) {
-    const h1 = document.createElement("h1");
-    h1.textContent = "About Us";
-
-    section.appendChild(h1);
-}
 
 const createAboutSection = function() {
     const section = document.createElement("section");
@@ -56,4 +42,4 @@ const createP = function(section) {
     section.appendChild(container);
 }
 
-export { createBanner, createAboutSection };
+export default createAboutSection;
