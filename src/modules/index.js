@@ -13,8 +13,18 @@ const removeChildElements = function(parentElement) {
     }
 }
 
-const toggleActiveNav = function(navButton) {
-    navButton.classList.toggle('active')
+let activeSection = 'hero';
+
+const setActiveSection = function(section) {
+    activeSection = section;
+    for (const key in navButtons) {
+        const navButton = navButtons[key];
+        if (key === activeSection) {
+            navButton.classList.add('active');
+        } else {
+            navButton.classList.remove('active');
+        }
+    }
 }
 
 const navButtons = {
@@ -26,8 +36,9 @@ navButtons.hero.addEventListener('mousedown', () => {
     contentContainer.removeChild(contentContainer.lastChild);
     removeChildElements(banner);
     createHeroSection(banner);
+    setActiveSection('hero');
 });
-    
+
 navButtons.about.addEventListener('mousedown', () => {
     banner.removeAttribute('id');
     removeChildElements(banner);
@@ -37,6 +48,7 @@ navButtons.about.addEventListener('mousedown', () => {
     banner.appendChild(h1);
     
     contentContainer.appendChild(about);
+    setActiveSection('about');
 })
 
 contentContainer.appendChild(hero);
