@@ -1,8 +1,7 @@
 import './hero.css'
 
-function createHeroSection() {
-    const section = document.createElement("section");
-    section.id = "hero";
+function createHeroSection(parentElement) {
+    parentElement.id = "hero";
 
     const h1 = document.createElement("h1");
 
@@ -21,17 +20,17 @@ function createHeroSection() {
     const button = document.createElement("button");
     button.textContent = "Book a table";
 
-    section.appendChild(h1);
-    section.appendChild(p);
-    section.appendChild(button);
+    parentElement.appendChild(h1);
+    parentElement.appendChild(p);
+    parentElement.appendChild(button);
 
-    const children = section.children;
+    const children = parentElement.children;
 
     for (let i = 0; i < children.length; i += 1) {
         children[i].style.animationDelay = 400 * i + "ms";
     }
 
-    return section;
+    return parentElement;
 }
 
 export default createHeroSection;

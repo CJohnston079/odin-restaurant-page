@@ -1,5 +1,3 @@
-import createBanner from '../banner/banner';
-
 import './about.css'
 
 const createAboutSection = function() {
@@ -10,6 +8,13 @@ const createAboutSection = function() {
     createP(section);
 
     return section;
+}
+
+const createH1 = function(section) {
+    const h1 = document.createElement("h1");
+    h1.textContent = "About Us";
+
+    section.appendChild(h1);
 }
 
 const createImg = function(section) {
