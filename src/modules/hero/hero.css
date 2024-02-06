@@ -1,15 +1,10 @@
 #hero {
-    height: calc(100vh - 15rem);
-
     display: grid;
     grid-template-columns: 60% 1fr;
-    grid-template-rows: repeat(3, audio);
     align-content: center;
     gap: 2rem;
     
-    color: white;
-
-    background-image: url(../../assets/images/hero-background.jpg), linear-gradient(60deg, hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0) 50%);
+    height: calc(100vh - 15rem);
 }
 
 #hero > * {

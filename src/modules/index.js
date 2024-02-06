@@ -16,22 +16,19 @@ const removeChildElements = function(parentElement) {
 const navButtons = document.querySelector('nav').children;
 
 navButtons[0].addEventListener('mousedown', () => {
+    contentContainer.removeChild(contentContainer.lastChild);
     removeChildElements(banner);
-    removeChildElements(contentContainer);
     createHeroSection(banner);
-    contentContainer.appendChild(hero);
 });
     
 navButtons[1].addEventListener('mousedown', () => {
     banner.removeAttribute('id');
     removeChildElements(banner);
-    removeChildElements(contentContainer);
 
     const h1 = document.createElement("h1");
     h1.textContent = "About Us";
     banner.appendChild(h1);
     
-    contentContainer.appendChild(banner);
     contentContainer.appendChild(about);
 })
 
