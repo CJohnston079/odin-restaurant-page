@@ -12,3 +12,8 @@
 
     transition: 800ms;
 }
+
+.banner * {
+    animation: fade 1200ms, slideX 1200ms;
+    animation-fill-mode: backwards;
+}

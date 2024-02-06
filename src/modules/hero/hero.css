@@ -19,11 +19,6 @@
     gap: 1rem;
 }
 
-#hero * {
-    animation: fade 1200ms, slideX 1200ms;
-    animation-fill-mode: backwards;
-}
-
 #hero h1 span:last-child {
     font-weight: 900;
     animation-delay: 200ms;
