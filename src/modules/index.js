@@ -31,7 +31,7 @@ const navButtons = {
     hero: document.querySelector('nav').children[0],
     about: document.querySelector('nav').children[1],
     menu: document.querySelector('nav').children[2],
-    book: document.querySelector('nav').children[4]
+    book: document.querySelector('nav').children[3]
 }
 
 navButtons.hero.addEventListener('mousedown', () => {
