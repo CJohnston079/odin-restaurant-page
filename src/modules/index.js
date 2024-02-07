@@ -29,7 +29,9 @@ const setActiveSection = function(section) {
 
 const navButtons = {
     hero: document.querySelector('nav').children[0],
-    about: document.querySelector('nav').children[1]
+    about: document.querySelector('nav').children[1],
+    menu: document.querySelector('nav').children[1],
+    book: document.querySelector('nav').children[1]
 }
 
 navButtons.hero.addEventListener('mousedown', () => {
