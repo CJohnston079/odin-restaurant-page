@@ -30,8 +30,8 @@ const setActiveSection = function(section) {
 const navButtons = {
     hero: document.querySelector('nav').children[0],
     about: document.querySelector('nav').children[1],
-    menu: document.querySelector('nav').children[1],
-    book: document.querySelector('nav').children[1]
+    menu: document.querySelector('nav').children[2],
+    book: document.querySelector('nav').children[4]
 }
 
 navButtons.hero.addEventListener('mousedown', () => {
@@ -57,6 +57,36 @@ navButtons.about.addEventListener('mousedown', () => {
     
     contentContainer.appendChild(about);
     setActiveSection('about');
-})
+});
+
+navButtons.menu.addEventListener('mousedown', () => {
+    if (activeSection === 'menu') {
+        return;
+    }
+    banner.removeAttribute('id');
+    removeChildElements(banner);
+
+    const h1 = document.createElement("h1");
+    h1.textContent = "Menu";
+    banner.appendChild(h1);
+    
+    contentContainer.appendChild(about);
+    setActiveSection('menu');
+});
+
+navButtons.book.addEventListener('mousedown', () => {
+    if (activeSection === 'book') {
+        return;
+    }
+    banner.removeAttribute('id');
+    removeChildElements(banner);
+
+    const h1 = document.createElement("h1");
+    h1.textContent = "Book a table";
+    banner.appendChild(h1);
+    
+    contentContainer.appendChild(about);
+    setActiveSection('book');
+});
 
 contentContainer.appendChild(hero);
