@@ -1,14 +1,14 @@
 import createBanner from "./banner/banner";
 import createHeroSection from "./hero/hero";
 import createAboutSection from "./about/about";
-// import createMenuSection from "./menu/menu";
+import createMenuSection from "./menu/menu";
 import createBookSection from "./book-a-table/book-a-table";
 
 const contentContainer = document.querySelector('#content');
 const banner = createBanner();
 const hero = createHeroSection(banner);
 const about = createAboutSection();
-// const menu = createMenuSection();
+const menu = createMenuSection();
 const book = createBookSection();
 
 const removeChildElements = function(parentElement) {
@@ -74,7 +74,7 @@ navButtons.menu.addEventListener('mousedown', () => {
     h1.textContent = "Menu";
     banner.appendChild(h1);
     
-    contentContainer.appendChild(about);
+    contentContainer.appendChild(menu);
     setActiveSection('menu');
 });
 
