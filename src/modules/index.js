@@ -1,11 +1,15 @@
 import createBanner from "./banner/banner";
 import createHeroSection from "./hero/hero";
 import createAboutSection from "./about/about";
+// import createMenuSection from "./menu/menu";
+import createBookSection from "./book-a-table/book-a-table";
 
 const contentContainer = document.querySelector('#content');
 const banner = createBanner();
 const hero = createHeroSection(banner);
 const about = createAboutSection();
+// const menu = createMenuSection();
+const book = createBookSection();
 
 const removeChildElements = function(parentElement) {
     while (parentElement.firstChild) {
@@ -85,7 +89,7 @@ navButtons.book.addEventListener('mousedown', () => {
     h1.textContent = "Book a table";
     banner.appendChild(h1);
     
-    contentContainer.appendChild(about);
+    contentContainer.appendChild(book);
     setActiveSection('book');
 });
 
