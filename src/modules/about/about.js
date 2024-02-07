@@ -10,13 +10,6 @@ const createAboutSection = function() {
     return section;
 }
 
-const createH1 = function(section) {
-    const h1 = document.createElement("h1");
-    h1.textContent = "About Us";
-
-    section.appendChild(h1);
-}
-
 const createImg = function(section) {
     const container = document.createElement('div');
     container.classList.add('img-container');
