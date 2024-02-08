@@ -140,12 +140,14 @@ nav button:last-child:hover {
 
 nav button.active {
     color: var(--accent-color);
+    animation: nav-bounce 200ms ease-out 2 alternate-reverse;
 }
 
 nav button.active:last-child {
     border-color: var(--accent-color);
     color: var(--accent-color);
     background: none;
+    animation: none;
 }
 
 main {
@@ -208,4 +210,13 @@ section button:hover {
 @keyframes slideX {
     0% { transform: translateX(2rem); }
     100% { transform: translateX(0); }
+}
+
+@keyframes nav-bounce {
+    0% {
+        padding-top: 0rem;
+        padding-bottom: 0.5rem;
+    }
+    100% {
+    }
 }
