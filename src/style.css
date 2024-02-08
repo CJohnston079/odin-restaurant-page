@@ -132,7 +132,6 @@ nav button:last-child {
     transition: background-color 400ms, border-color 400ms, filter 400ms;
 }
 
-nav button.active:last-child,
 nav button:last-child:hover {
     border-color: var(--accent-color);
     color: white;
@@ -141,7 +140,12 @@ nav button:last-child:hover {
 
 nav button.active {
     color: var(--accent-color);
-    border-color: (var(--accent-color)) !important;
+}
+
+nav button.active:last-child {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: none;
 }
 
 main {
