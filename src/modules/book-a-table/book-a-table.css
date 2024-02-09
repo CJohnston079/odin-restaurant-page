@@ -5,6 +5,8 @@
 form {
     margin: 0 auto;
     max-width: max(50%, 24rem);
+
+    font-family: 'Poppins', sans-serif;
 }
 
 label {
@@ -18,6 +20,10 @@ label {
 label input {
     flex-grow: 1;
     padding: 0.5rem;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 form button {
