@@ -6,19 +6,18 @@ const createBookSection = function() {
 
     const form = document.createElement("form");
 
-    const dateInput = createLabelledInput('date', 'Date');
-    const timeInput = createLabelledInput('time', 'Time');
-    const guestsInput = createLabelledInput('number', 'Number of guests');
-    const nameInput = createLabelledInput('text', 'Full name');
-    const emailInput = createLabelledInput('email', 'Email address');
+    const inputs = {
+        dateInput: createLabelledInput('date', 'Date'),
+        timeInput: createLabelledInput('time', 'Time'),
+        guestsInput: createLabelledInput('number', 'Number of guests'),
+        nameInput: createLabelledInput('text', 'Full name'),
+        emailInput: createLabelledInput('email', 'Email address')
+    }
 
-    form.appendChild(dateInput.label);
-    form.appendChild(timeInput.label);
-    form.appendChild(guestsInput.label);
-    form.appendChild(nameInput.label);
-    form.appendChild(emailInput.label);
+    for (const input in inputs) {
+        form.appendChild(inputs[input].label);
+    }
 
-    // Submit button
     const submitButton = document.createElement('button');
     submitButton.type = "submit";
     submitButton.textContent = "Submit";
