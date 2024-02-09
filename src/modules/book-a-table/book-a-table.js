@@ -6,45 +6,17 @@ const createBookSection = function() {
 
     const form = document.createElement("form");
 
-    // Date input
-    const dateLabel = document.createElement('label');
-    dateLabel.textContent = "Date: ";
-    const dateInput = document.createElement('input');
-    dateInput.type = "date";
-    dateLabel.appendChild(dateInput);
-    form.appendChild(dateLabel);
+    const dateInput = createLabelledInput('date', 'Date');
+    const timeInput = createLabelledInput('time', 'Time');
+    const guestsInput = createLabelledInput('number', 'Number of guests');
+    const nameInput = createLabelledInput('text', 'Full name');
+    const emailInput = createLabelledInput('email', 'Email address');
 
-    // Time input
-    const timeLabel = document.createElement('label');
-    timeLabel.textContent = "Time: ";
-    const timeInput = document.createElement('input');
-    timeInput.type = "time";
-    timeLabel.appendChild(timeInput);
-    form.appendChild(timeLabel);
-
-    // Number of guests input
-    const guestsLabel = document.createElement('label');
-    guestsLabel.textContent = "Number of Guests: ";
-    const guestsInput = document.createElement('input');
-    guestsInput.type = "number";
-    guestsLabel.appendChild(guestsInput);
-    form.appendChild(guestsLabel);
-
-    // Name input
-    const nameLabel = document.createElement('label');
-    nameLabel.textContent = "Name: ";
-    const nameInput = document.createElement('input');
-    nameInput.type = "text";
-    nameLabel.appendChild(nameInput);
-    form.appendChild(nameLabel);
-
-    // Email input
-    const emailLabel = document.createElement('label');
-    emailLabel.textContent = "Email Address: ";
-    const emailInput = document.createElement('input');
-    emailInput.type = "email";
-    emailLabel.appendChild(emailInput);
-    form.appendChild(emailLabel);
+    form.appendChild(dateInput.label);
+    form.appendChild(timeInput.label);
+    form.appendChild(guestsInput.label);
+    form.appendChild(nameInput.label);
+    form.appendChild(emailInput.label);
 
     // Submit button
     const submitButton = document.createElement('button');
@@ -55,9 +27,18 @@ const createBookSection = function() {
     section.appendChild(form);
 
     return section;
-}
+};
 
+const createLabelledInput = function(type, labelText) {
+    const label = document.createElement('label');
+    label.textContent = `${labelText}:`
 
+    const input = document.createElement('input');
+    input.type = type;
 
+    label.appendChild(input);
+
+    return { label, input };
+};
 
 export default createBookSection;
