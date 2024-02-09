@@ -1,3 +1,26 @@
 .banner:has(+ #book-a-table) {
     background-position: center 55%;
 }
+
+form {
+    margin: 0 auto;
+    max-width: max(50%, 24rem);
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+label input {
+    flex-grow: 1;
+    padding: 0.5rem;
+}
+
+form button {
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
