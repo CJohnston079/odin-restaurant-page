@@ -5,36 +5,46 @@ const createBookSection = function() {
     section.id = "book-a-table";
 
     const form = document.createElement("form");
-    
-    // Name input
-    const nameInput = document.createElement('input');
-    nameInput.type = "text";
-    nameInput.placeholder = "Name";
-    form.appendChild(nameInput);
 
     // Date input
+    const dateLabel = document.createElement('label');
+    dateLabel.textContent = "Date: ";
     const dateInput = document.createElement('input');
     dateInput.type = "date";
-    dateInput.placeholder = "Date";
-    form.appendChild(dateInput);
+    dateLabel.appendChild(dateInput);
+    form.appendChild(dateLabel);
 
     // Time input
+    const timeLabel = document.createElement('label');
+    timeLabel.textContent = "Time: ";
     const timeInput = document.createElement('input');
     timeInput.type = "time";
-    timeInput.placeholder = "Time";
-    form.appendChild(timeInput);
+    timeLabel.appendChild(timeInput);
+    form.appendChild(timeLabel);
 
     // Number of guests input
+    const guestsLabel = document.createElement('label');
+    guestsLabel.textContent = "Number of Guests: ";
     const guestsInput = document.createElement('input');
     guestsInput.type = "number";
-    guestsInput.placeholder = "Number of Guests";
-    form.appendChild(guestsInput);
+    guestsLabel.appendChild(guestsInput);
+    form.appendChild(guestsLabel);
+
+    // Name input
+    const nameLabel = document.createElement('label');
+    nameLabel.textContent = "Name: ";
+    const nameInput = document.createElement('input');
+    nameInput.type = "text";
+    nameLabel.appendChild(nameInput);
+    form.appendChild(nameLabel);
 
     // Email input
+    const emailLabel = document.createElement('label');
+    emailLabel.textContent = "Email Address: ";
     const emailInput = document.createElement('input');
     emailInput.type = "email";
-    emailInput.placeholder = "Email Address";
-    form.appendChild(emailInput);
+    emailLabel.appendChild(emailInput);
+    form.appendChild(emailLabel);
 
     // Submit button
     const submitButton = document.createElement('button');
@@ -46,6 +56,7 @@ const createBookSection = function() {
 
     return section;
 }
+
 
 
 
