@@ -1,0 +1,3 @@
+.banner:has(+ #menu) {
+    background-position: center 75%;
+}

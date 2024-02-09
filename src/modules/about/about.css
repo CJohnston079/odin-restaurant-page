@@ -12,6 +12,10 @@
     font-weight: 100;
 }
 
+.banner:has(+ #about) {
+    background-position: left 95%;
+}
+
 .img-container {
     width: 100%;
 
