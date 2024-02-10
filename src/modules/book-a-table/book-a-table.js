@@ -9,9 +9,9 @@ const createBookSection = function() {
     const inputs = {
         dateInput: createLabelledDropdown('date', 'Date', ['Saturday', 'Sunday']),
         timeInput: createLabelledDropdown('time', 'Time', ['12:00', '17:00']),
-        guestsInput: createLabelledDropdown('number', 'Guests', [1, 2, 3, 4, 5, 6]),
-        nameInput: createLabelledInput('text', 'Name'),
-        emailInput: createLabelledInput('email', 'Email')
+        guestsInput: createLabelledDropdown('number', 'Number of guests', [1, 2, 3, 4, 5, 6]),
+        nameInput: createLabelledInput('text', 'Full name'),
+        emailInput: createLabelledInput('email', 'Email address')
     }
 
     for (const input in inputs) {
@@ -20,7 +20,7 @@ const createBookSection = function() {
 
     const submitButton = document.createElement('button');
     submitButton.type = "submit";
-    submitButton.textContent = "Submit";
+    submitButton.textContent = "Confirm reservation";
     form.appendChild(submitButton);
 
     section.appendChild(form);
