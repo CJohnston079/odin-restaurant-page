@@ -16,6 +16,7 @@ label {
     margin-bottom: 2rem;
 
     font-size: 1.25rem;
+    color: hsl(0, 0%, 80%);
 }
 
 input {
