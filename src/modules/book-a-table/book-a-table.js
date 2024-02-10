@@ -9,9 +9,9 @@ const createBookSection = function() {
     const inputs = {
         dateInput: createLabelledInput('date', 'Date'),
         timeInput: createLabelledInput('time', 'Time'),
-        guestsInput: createLabelledInput('number', 'Number of guests'),
-        nameInput: createLabelledInput('text', 'Full name'),
-        emailInput: createLabelledInput('email', 'Email address')
+        guestsInput: createLabelledInput('number', 'Guests'),
+        nameInput: createLabelledInput('text', 'Name'),
+        emailInput: createLabelledInput('email', 'Email')
     }
 
     for (const input in inputs) {

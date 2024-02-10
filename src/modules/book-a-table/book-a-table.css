@@ -4,26 +4,35 @@
 
 form {
     margin: 0 auto;
-    max-width: max(50%, 24rem);
+    max-width: max(50%, 32rem);
 
     font-family: 'Poppins', sans-serif;
 }
 
 label {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 7ch 1fr;
     align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
+    margin-bottom: 2rem;
+
+    font-size: 1.25rem;
 }
 
-label input {
+input {
     flex-grow: 1;
-    padding: 0.5rem;
+    border: none;
+    border-bottom: solid;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem; 
     font-weight: 700;
+    color: white;
+
+    background: none;
+}
+
+input:focus-visible {
+    outline: none;
 }
 
 form button {
