@@ -6,10 +6,13 @@ import createBookSection from "./book-a-table/book-a-table";
 
 const contentContainer = document.querySelector('#content');
 const banner = createBanner();
-const hero = createHeroSection(banner);
-const about = createAboutSection();
-const menu = createMenuSection();
-const book = createBookSection();
+
+const sections = {
+    hero: createHeroSection(banner),
+    about: createAboutSection(),
+    menu: createMenuSection(),
+    book: createBookSection()
+}
 
 const removeChildElements = function(parentElement) {
     while (parentElement.firstChild) {
@@ -59,7 +62,7 @@ navButtons.about.addEventListener('mousedown', () => {
     h1.textContent = "About Us";
     banner.appendChild(h1);
     
-    contentContainer.appendChild(about);
+    contentContainer.appendChild(sections.about);
     setActiveSection('about');
 });
 
@@ -74,7 +77,7 @@ navButtons.menu.addEventListener('mousedown', () => {
     h1.textContent = "Menu";
     banner.appendChild(h1);
     
-    contentContainer.appendChild(menu);
+    contentContainer.appendChild(sections.menu);
     setActiveSection('menu');
 });
 
@@ -89,8 +92,8 @@ navButtons.book.addEventListener('mousedown', () => {
     h1.textContent = "Book a table";
     banner.appendChild(h1);
     
-    contentContainer.appendChild(book);
+    contentContainer.appendChild(sections.book);
     setActiveSection('book');
 });
 
-contentContainer.appendChild(hero);
+contentContainer.appendChild(sections.hero);
