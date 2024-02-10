@@ -15,7 +15,7 @@ const sections = {
 }
 
 const removeChildElements = function(parentElement) {
-    while (parentElement.firstChild) {
+    while (parentElement.firstChild && !parentElement.lastChild.classList.contains('banner')) {
         parentElement.removeChild(parentElement.lastChild);
     }
 }
@@ -57,6 +57,7 @@ function appendSection(sectionName, headingText) {
     }
     banner.removeAttribute('id');
     removeChildElements(banner);
+    removeChildElements(contentContainer);
 
     const h1 = document.createElement("h1");
     h1.textContent = headingText;
