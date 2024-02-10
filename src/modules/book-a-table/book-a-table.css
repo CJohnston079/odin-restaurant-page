@@ -11,32 +11,35 @@ form {
 
 label {
     display: grid;
-    grid-template-columns: 7ch 1fr;
-    align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 
-    font-size: 1.25rem;
-    color: hsl(0, 0%, 80%);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: hsl(0, 0%, 60%);
 }
 
-input {
-    flex-grow: 1;
+input,
+select {
     border: none;
-    border-bottom: solid;
+    border-bottom: solid white 1px;
+    padding: 0.5rem;
+    padding-left: 0.25rem;
 
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.25rem; 
-    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
     color: white;
 
     background: none;
 }
 
-input:focus-visible {
+input:focus-visible,
+select:focus-visible {
     outline: none;
 }
 
 form button {
-    padding: 0.5rem 1rem;
     width: 100%;
 }
