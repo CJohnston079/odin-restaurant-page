@@ -7,9 +7,9 @@ const createBookSection = function() {
     const form = document.createElement("form");
 
     const inputs = {
-        dateInput: createLabelledInput('date', 'Date'),
-        timeInput: createLabelledInput('time', 'Time'),
-        guestsInput: createLabelledInput('number', 'Guests'),
+        dateInput: createLabelledDropdown('date', 'Date', ['Saturday', 'Sunday']),
+        timeInput: createLabelledDropdown('time', 'Time', ['12:00', '17:00']),
+        guestsInput: createLabelledDropdown('number', 'Guests', [1, 2, 3, 4, 5, 6]),
         nameInput: createLabelledInput('text', 'Name'),
         emailInput: createLabelledInput('email', 'Email')
     }
@@ -30,7 +30,7 @@ const createBookSection = function() {
 
 const createLabelledInput = function(type, labelText) {
     const label = document.createElement('label');
-    label.textContent = `${labelText}:`
+    label.textContent = `${labelText}:`;
 
     const input = document.createElement('input');
     input.type = type;
@@ -39,5 +39,25 @@ const createLabelledInput = function(type, labelText) {
 
     return { label, input };
 };
+
+const createLabelledDropdown = function(name, labelText, options) {
+    const label = document.createElement('label');
+    label.textContent = `${labelText}:`;
+
+    const select = document.createElement('select');
+    select.name = name;
+
+    options.forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        select.appendChild(option);
+    });
+
+    label.appendChild(select);
+
+    return { label, select };
+};
+
 
 export default createBookSection;
