@@ -51,49 +51,23 @@ navButtons.hero.addEventListener('mousedown', () => {
     setActiveSection('hero');
 });
 
-navButtons.about.addEventListener('mousedown', () => {
-    if (activeSection === 'about') {
+function appendSection(sectionName, headingText) {
+    if (activeSection === sectionName) {
         return;
     }
     banner.removeAttribute('id');
     removeChildElements(banner);
 
     const h1 = document.createElement("h1");
-    h1.textContent = "About Us";
+    h1.textContent = headingText;
     banner.appendChild(h1);
     
-    contentContainer.appendChild(sections.about);
-    setActiveSection('about');
-});
+    contentContainer.appendChild(sections[sectionName]);
+    setActiveSection(sectionName);
+}
 
-navButtons.menu.addEventListener('mousedown', () => {
-    if (activeSection === 'menu') {
-        return;
-    }
-    banner.removeAttribute('id');
-    removeChildElements(banner);
-
-    const h1 = document.createElement("h1");
-    h1.textContent = "Menu";
-    banner.appendChild(h1);
-    
-    contentContainer.appendChild(sections.menu);
-    setActiveSection('menu');
-});
-
-navButtons.book.addEventListener('mousedown', () => {
-    if (activeSection === 'book') {
-        return;
-    }
-    banner.removeAttribute('id');
-    removeChildElements(banner);
-
-    const h1 = document.createElement("h1");
-    h1.textContent = "Book a table";
-    banner.appendChild(h1);
-    
-    contentContainer.appendChild(sections.book);
-    setActiveSection('book');
-});
+navButtons.about.addEventListener('mousedown', () => appendSection('about', 'About Us'));
+navButtons.menu.addEventListener('mousedown', () => appendSection('menu', 'Menu'));
+navButtons.book.addEventListener('mousedown', () => appendSection('book', 'Book a table'));
 
 contentContainer.appendChild(sections.hero);
