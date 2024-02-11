@@ -2,7 +2,7 @@ import createBanner from "./banner/banner";
 import createHeroSection from "./hero/hero";
 import createAboutSection from "./about/about";
 import createMenuSection from "./menu/menu";
-import createBookSection from "./book-a-table/book-a-table";
+import createBookSection from "./book-a-table/bookATable";
 
 const contentContainer = document.querySelector('#content');
 const banner = createBanner();

@@ -1,4 +1,4 @@
-import './book-a-table.css'
+import './book-a-table.css';
 
 const createBookSection = function() {
     const section = document.createElement("section");
