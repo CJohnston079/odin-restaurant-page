@@ -2,4 +2,4 @@ function getNextTwoWeeks() {
     return;
 }
 
-export default getNextTwoWeeks;
+export default getNextTwoWeeks
