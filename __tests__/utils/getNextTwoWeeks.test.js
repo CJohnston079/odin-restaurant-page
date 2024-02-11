@@ -9,7 +9,8 @@ describe('getNextTwoWeeks', () => {
     it("should return today's date as the first item", () => {
         const result = getNextTwoWeeks();
         const today = new Date();
-        expect(result[0].getDate()).toEqual(today.getDate());
+        const formattedToday = formatDate(today);
+        expect(result[0]).toEqual(formattedToday);
     });
     it('should return dates for the next two weeks', () => {
         const result = getNextTwoWeeks();
@@ -18,7 +19,13 @@ describe('getNextTwoWeeks', () => {
         const today = new Date();
         const twoWeeksLater = new Date(today);
         twoWeeksLater.setDate(today.getDate() + 13);
-
-        expect(latestDate.getDate()).toBe(twoWeeksLater.getDate());
+        
+        const formattedLatestDate = formatDate(twoWeeksLater);
+        expect(latestDate).toEqual(formattedLatestDate);
     });
 });
+
+function formatDate(date) {
+    const options = { weekday: 'long', day: 'numeric', month: 'long' };
+    return date.toLocaleDateString('en-US', options);
+}
