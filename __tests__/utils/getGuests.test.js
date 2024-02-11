@@ -10,7 +10,7 @@ describe('getGuests', () => {
         expect(result[0]).toBe('1 person');
     });
     it('should suffix all values apart from the first with "people"', () => {
-        const result = getGuests();
+        const result = getGuests(8);
         for (let i = 1; i < 8; i += 1) {
             expect(result[i]).toBe(`${i + 1} people`);
         };
