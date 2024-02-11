@@ -1,5 +1,6 @@
 import './book-a-table.css';
 import getNextTwoWeeks from '../utils/getNextTwoWeeks';
+import getTimes from '../utils/getTimes';
 
 const createBookSection = function() {
     const section = document.createElement("section");
@@ -9,7 +10,7 @@ const createBookSection = function() {
 
     const inputs = {
         dateInput: createLabelledDropdown('date', 'Date', getNextTwoWeeks()),
-        timeInput: createLabelledDropdown('time', 'Time', ['12:00', '17:00']),
+        timeInput: createLabelledDropdown('time', 'Time', getTimes()),
         guestsInput: createLabelledDropdown('number', 'Number of guests', [1, 2, 3, 4, 5, 6]),
         nameInput: createLabelledInput('text', 'Full name'),
         emailInput: createLabelledInput('email', 'Email address')
