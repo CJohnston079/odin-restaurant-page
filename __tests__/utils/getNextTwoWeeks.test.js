@@ -1,1 +1,1 @@
-const getNextTwoWeeks = require('../../src/modules/utils/getNextTwoWeeks');
+import getNextTwoWeeks from "../../src/modules/utils/getNextTwoWeeks";
