@@ -23,9 +23,15 @@ const createBookDialog = function() {
     }
 
     const submitButton = document.createElement('button');
-    submitButton.type = "submit";
-    submitButton.textContent = "Confirm reservation";
+    submitButton.type = 'submit';
+    submitButton.textContent = 'Confirm reservation';
     form.appendChild(submitButton);
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close');
+    closeButton.type = 'button';
+    closeButton.textContent = '+'
+    form.appendChild(closeButton);
 
     section.appendChild(form);
 
