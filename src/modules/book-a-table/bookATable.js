@@ -32,6 +32,7 @@ const createBookDialog = function() {
     closeButton.type = 'button';
     closeButton.textContent = '×'
     form.appendChild(closeButton);
+    closeButton.addEventListener("mousedown", () => dialog.close());
 
     dialog.appendChild(form);
 
