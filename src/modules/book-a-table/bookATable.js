@@ -4,8 +4,8 @@ import getNextTwoWeeks from '../utils/getNextTwoWeeks';
 import getTimes from '../utils/getTimes';
 import getGuests from '../utils/getGuests';
 
-const createBookSection = function() {
-    const section = document.createElement("section");
+const createBookDialog = function() {
+    const section = document.createElement("dialog");
     section.id = "book-a-table";
 
     const form = document.createElement("form");
@@ -64,4 +64,4 @@ const createLabelledDropdown = function(name, labelText, options) {
 };
 
 
-export default createBookSection;
+export default createBookDialog;

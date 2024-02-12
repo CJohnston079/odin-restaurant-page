@@ -2,7 +2,7 @@ import createBanner from "./banner/banner";
 import createHeroSection from "./hero/hero";
 import createAboutSection from "./about/about";
 import createMenuSection from "./menu/menu";
-import createBookSection from "./book-a-table/bookATable";
+import createBookDialog from "./book-a-table/bookATable";
 
 const contentContainer = document.querySelector('#content');
 const banner = createBanner();
@@ -11,7 +11,7 @@ const sections = {
     hero: createHeroSection(banner),
     about: createAboutSection(),
     menu: createMenuSection(),
-    book: createBookSection()
+    book: createBookDialog()
 }
 
 const removeChildElements = function(parentElement) {
@@ -69,6 +69,10 @@ function appendSection(sectionName, headingText) {
 
 navButtons.about.addEventListener('mousedown', () => appendSection('about', 'About Us'));
 navButtons.menu.addEventListener('mousedown', () => appendSection('menu', 'Menu'));
-navButtons.book.addEventListener('mousedown', () => appendSection('book', 'Book a table'));
+// navButtons.book.addEventListener('mousedown', () => appendSection('book', 'Book a table'));
+navButtons.book.addEventListener('mousedown', () => sections.book.showModal());
+
+// closeButton.addEventListener("mousedown", () => dialog.close());
 
 contentContainer.appendChild(sections.hero);
+contentContainer.appendChild(sections.book);
