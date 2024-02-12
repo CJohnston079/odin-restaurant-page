@@ -5,8 +5,8 @@ import getTimes from '../utils/getTimes';
 import getGuests from '../utils/getGuests';
 
 const createBookDialog = function() {
-    const section = document.createElement("dialog");
-    section.id = "book-a-table";
+    const dialog = document.createElement("dialog");
+    dialog.id = "book-a-table";
 
     const form = document.createElement("form");
 
@@ -33,9 +33,9 @@ const createBookDialog = function() {
     closeButton.textContent = '×'
     form.appendChild(closeButton);
 
-    section.appendChild(form);
+    dialog.appendChild(form);
 
-    return section;
+    return dialog;
 };
 
 const createLabelledInput = function(type, labelText) {
