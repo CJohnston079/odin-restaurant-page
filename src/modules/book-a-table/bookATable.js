@@ -22,22 +22,26 @@ const createBookDialog = function() {
         form.appendChild(inputs[input].label);
     }
 
-    const submitButton = document.createElement('button');
-    submitButton.type = 'submit';
-    submitButton.textContent = 'Confirm reservation';
+    const submitButton = createButton('Confirm reservation', 'submit',);
     form.appendChild(submitButton);
 
-    const closeButton = document.createElement('button');
+    const closeButton = createButton('×');
     closeButton.classList.add('close');
-    closeButton.type = 'button';
-    closeButton.textContent = '×'
-    form.appendChild(closeButton);
-    closeButton.addEventListener("mousedown", () => dialog.close());
+    dialog.appendChild(closeButton);
+    closeButton.addEventListener('mousedown', () => dialog.close());
 
     dialog.appendChild(form);
 
     return dialog;
 };
+
+const createButton = function(buttonText, type='button') {
+    const button = document.createElement('button');
+    button.type = type;
+    button.textContent = buttonText;
+
+    return button
+}
 
 const createLabelledInput = function(type, labelText) {
     const label = document.createElement('label');
