@@ -1,10 +1,18 @@
-.banner:has(+ #book-a-table) {
+/* .banner:has(+ #book-a-table) {
     background-position: center 55%;
+} */
+
+dialog,
+::backdrop {
+    background-color: black;
+}
+
+dialog {
+    width: max(30vw, 24rem);
 }
 
 form {
     margin: 0 auto;
-    max-width: max(50%, 32rem);
 
     font-family: 'Poppins', sans-serif;
 }

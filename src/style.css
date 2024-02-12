@@ -181,7 +181,8 @@ section p {
     line-height: 1.5rem;
 }
 
-section button {
+section button,
+dialog button {
     border-radius: 4px;
     padding: 1rem 2rem;
     width: fit-content;
@@ -198,7 +199,8 @@ section button {
     cursor: pointer;
 }
 
-section button:hover {
+section button:hover,
+dialog button:hover {
     filter: brightness(1.2);
 }
 
