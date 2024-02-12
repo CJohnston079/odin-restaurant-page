@@ -59,7 +59,7 @@ function appendSection(sectionName, headingText) {
     removeChildElements(banner);
     removeChildElements(contentContainer);
 
-    const h1 = document.createElement("h1");
+    const h1 = document.createElement('h1');
     h1.textContent = headingText;
     banner.appendChild(h1);
     
@@ -69,10 +69,9 @@ function appendSection(sectionName, headingText) {
 
 navButtons.about.addEventListener('mousedown', () => appendSection('about', 'About Us'));
 navButtons.menu.addEventListener('mousedown', () => appendSection('menu', 'Menu'));
-// navButtons.book.addEventListener('mousedown', () => appendSection('book', 'Book a table'));
 navButtons.book.addEventListener('mousedown', () => sections.book.showModal());
 
 // closeButton.addEventListener("mousedown", () => dialog.close());
 
+document.body.appendChild(sections.book);
 contentContainer.appendChild(sections.hero);
-contentContainer.appendChild(sections.book);
