@@ -29,8 +29,13 @@ const createBookDialog = function() {
     closeButton.classList.add('close');
     dialog.appendChild(closeButton);
     closeButton.addEventListener('mousedown', () => {
-        dialog.close();
         dialog.classList.remove('dialog-open');
+        setTimeout(() => {
+            dialog.classList.add('dialog-close');
+        }, 10);
+        setTimeout(() => {
+            dialog.close()
+        }, 610);
     });
 
     dialog.appendChild(form);

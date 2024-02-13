@@ -28,7 +28,11 @@ dialog:focus-visible {
 }
 
 .dialog-open {
-    animation: scale-2d 800ms, border-round-to-sharp 800ms;
+    animation: scale-2d 600ms, border-round-to-sharp 600ms;
+}
+
+.dialog-close {
+    animation: scale-2d 600ms reverse, border-round-to-sharp 600ms reverse;
 }
 
 form {
