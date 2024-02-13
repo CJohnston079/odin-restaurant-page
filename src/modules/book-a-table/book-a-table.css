@@ -20,12 +20,15 @@ dialog {
 
     background-color: black;
 
-    animation: scale-2d 800ms, border-round-to-sharp 800ms;
     transform-origin: top right;
 }
 
 dialog:focus-visible {
     outline: none;
+}
+
+.dialog-open {
+    animation: scale-2d 800ms, border-round-to-sharp 800ms;
 }
 
 form {

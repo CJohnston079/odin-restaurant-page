@@ -28,7 +28,10 @@ const createBookDialog = function() {
     const closeButton = createButton('×');
     closeButton.classList.add('close');
     dialog.appendChild(closeButton);
-    closeButton.addEventListener('mousedown', () => dialog.close());
+    closeButton.addEventListener('mousedown', () => {
+        dialog.close();
+        dialog.classList.remove('dialog-open');
+    });
 
     dialog.appendChild(form);
 
