@@ -24,6 +24,10 @@ dialog {
     transform-origin: top right;
 }
 
+dialog:focus-visible {
+    outline: none;
+}
+
 form {
     margin: 0 auto;
     width: max(30vw, 24rem);
