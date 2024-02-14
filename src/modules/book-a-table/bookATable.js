@@ -7,6 +7,7 @@ import getGuests from '../utils/getGuests';
 const createBookDialog = function() {
     const dialog = document.createElement("dialog");
     dialog.id = "book-a-table";
+    dialog.classList.add('dialog-close');
 
     const form = document.createElement("form");
 

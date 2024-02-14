@@ -105,6 +105,10 @@ form button {
     border-color: white;
 }
 
+.dialog-close .close {
+    display: none;
+}
+
 @keyframes scale-2d {
     0% { transform: scale(0, 0); }
     100% { transform: scale(1, 1); }
