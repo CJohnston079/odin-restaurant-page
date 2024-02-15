@@ -79,6 +79,19 @@ form button {
     width: 100%;
 }
 
+.dialog-close form *,
+.dialog-open button {
+    animation: fade 400ms reverse;
+    animation-fill-mode: forwards;
+}
+
+.dialog-open form *,
+.dialog-open button {
+    animation: fade 400ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
 .close {
     position: fixed;
     inset: 1rem 1rem auto auto;
