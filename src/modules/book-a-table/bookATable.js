@@ -7,7 +7,7 @@ import getGuests from '../utils/getGuests';
 const createBookDialog = function() {
     const dialog = document.createElement("dialog");
     dialog.id = "book-a-table";
-    dialog.classList.add('dialog-close');
+    dialog.classList.add('dialog-closed');
 
     const form = document.createElement("form");
 
@@ -32,7 +32,7 @@ const createBookDialog = function() {
     closeButton.addEventListener('mousedown', () => {
         dialog.classList.remove('dialog-open');
         setTimeout(() => {
-            dialog.classList.add('dialog-close');
+            dialog.classList.add('dialog-closed');
         }, 10);
         setTimeout(() => {
             dialog.close()

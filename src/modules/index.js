@@ -71,7 +71,7 @@ navButtons.about.addEventListener('mousedown', () => appendSection('about', 'Abo
 navButtons.menu.addEventListener('mousedown', () => appendSection('menu', 'Menu'));
 navButtons.book.addEventListener('mousedown', () => {
     sections.book.showModal();
-    sections.book.classList.remove('dialog-close');
+    sections.book.classList.remove('dialog-closed');
     setTimeout(() => {
         sections.book.classList.add('dialog-open');
     }, 10);
