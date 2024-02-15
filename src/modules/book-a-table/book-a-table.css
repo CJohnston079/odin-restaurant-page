@@ -29,10 +29,12 @@ dialog:focus-visible {
 
 .dialog-open {
     animation: scale-2d 600ms, border-round-to-sharp 600ms;
+    animation-fill-mode: backwards;
 }
 
 .dialog-close {
     animation: scale-2d 600ms reverse, border-round-to-sharp 600ms reverse;
+    animation-fill-mode: forwards;
 }
 
 form {
