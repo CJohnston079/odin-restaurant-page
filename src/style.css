@@ -222,3 +222,13 @@ dialog button:hover {
     100% {
     }
 }
+
+@keyframes scale-2d {
+    0% { transform: scale(0, 0); }
+    100% { transform: scale(1, 1); }
+}
+
+@keyframes border-round-to-sharp {
+    0% { border-radius: 100% 0% 50% 100%; }
+    100% { border-radius: 0%; }
+}
