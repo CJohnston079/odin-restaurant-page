@@ -70,9 +70,9 @@ function appendSection(sectionName, headingText) {
 navButtons.about.addEventListener('mousedown', () => appendSection('about', 'About Us'));
 navButtons.menu.addEventListener('mousedown', () => appendSection('menu', 'Menu'));
 navButtons.book.addEventListener('mousedown', () => {
-    sections.book.showModal();
     sections.book.classList.remove('dialog-closed');
     setTimeout(() => {
+        sections.book.showModal();
         sections.book.classList.add('dialog-open');
     }, 10);
 });
