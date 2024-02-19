@@ -7,4 +7,8 @@ const createMenuSection = function() {
     return section;
 }
 
+const createMenuItem(name, price, ingredients) {
+    return { name, price, ingredients };
+}
+
 export default createMenuSection;
