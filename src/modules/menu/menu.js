@@ -12,12 +12,9 @@ const createMenuItem = function(name, price, ingredients) {
 }
 
 const createFoodItem = function(name, price, ingredients, isVegetarian) {
-    const foodItem = createMenuItem(name, price, ingredients)
-    
-    foodItem.isVegetarian = isVegetarian;
-    foodItem.type = 'food';
+    const { name, price, ingredients } = createMenuItem(name, price, ingredients);
 
-    return foodItem;
+    return { name, price, ingredients, isVegetarian, type: 'food' };
 }
 
 export default createMenuSection;
