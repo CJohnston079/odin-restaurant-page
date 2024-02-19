@@ -1,10 +1,10 @@
 import './menu.css'
 
-const createBookDialog = function() {
+const createMenuSection = function() {
     const section = document.createElement("section");
     section.id = "menu";
 
     return section;
 }
 
-export default createBookDialog;
+export default createMenuSection;
