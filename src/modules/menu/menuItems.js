@@ -3,9 +3,12 @@ const createMenuItem = function(name, price, ingredients) {
 }
 
 const createFoodItem = function(name, price, ingredients, isVegetarian) {
-    const { name, price, ingredients } = createMenuItem(name, price, ingredients);
+    const foodItem = createMenuItem(name, price, ingredients)
+    
+    foodItem.isVegetarian = isVegetarian;
+    foodItem.type = 'food';
 
-    return { name, price, ingredients, type: 'food', isVegetarian };
+    return foodItem;
 }
 
 export { createFoodItem };

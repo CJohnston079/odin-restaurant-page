@@ -1,5 +1,5 @@
-import './menu.css';
-import { createFoodItem } from './menuItems.js';
+import './menu.css'
+import { createFoodItem } from './menuItems';
 
 const createMenuSection = function() {
     const section = document.createElement("section");
