@@ -1,37 +1,17 @@
-const createMenuItem = function(name, price, ingredients) {
-    return { name, price, ingredients };
-}
+const createMenuItem = function(name, price, ingredients, type) {
+    return { name, price, ingredients, type };
+};
 
 const createFoodItem = function(name, price, ingredients, isVegetarian) {
-    const {
-        name: foodName,
-        price: foodPrice,
-        ingredients: foodIngredients
-    } = createMenuItem(name, price, ingredients);
+    const newFood = createMenuItem(name, price, ingredients, 'food');
     
-    return {
-        name: foodName,
-        price: foodPrice,
-        ingredients: foodIngredients,
-        type: 'food',
-        isVegetarian
-    };
-}
+    return { ...newFood, isVegetarian };
+};
 
-const createDrinkItem = function (name, price, ingredients, isAlcoholic) {
-    const {
-        name: drinkName,
-        price: drinkPrice,
-        ingredients: drinkIngredients
-    } = createMenuItem(name, price, ingredients);
-
-    return {
-        name: drinkName,
-        price: drinkPrice,
-        ingredients: drinkIngredients,
-        type: 'drink',
-        isAlcoholic
-    };
-}
+const createDrinkItem = function(name, price, ingredients, isAlcoholic) {
+    const newDrink = createMenuItem(name, price, ingredients, 'drink');
+    
+    return { ...newDrink, isAlcoholic };
+};
 
 export { createFoodItem, createDrinkItem };
