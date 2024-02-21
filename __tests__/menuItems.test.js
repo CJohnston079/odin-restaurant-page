@@ -4,7 +4,12 @@ describe('createFoodItem', () => {
     let testFood;
 
     beforeEach(() => {
-        testFood = createFoodItem('Sandwich', 5.99, ['bread', 'butter'], true);
+        testFood = createFoodItem({
+            name: 'Sandwich',
+            price: 3.99,
+            ingredients: ['bread', 'butter'],
+            isVegetarian: true
+        });
     });
 
     it('should return food item with inherited properties from createMenuItem', () => {
@@ -14,7 +19,7 @@ describe('createFoodItem', () => {
     });
     it('should set properties inherited from createMenuItems', () => {
         expect(testFood.name).toBe('Sandwich');
-        expect(testFood.price).toBe(5.99);
+        expect(testFood.price).toBe(3.99);
         expect(testFood.ingredients).toEqual(['bread', 'butter']);
     });
     it('should set type property to "food"', () => {
@@ -29,23 +34,21 @@ describe('createDrinksItem', () => {
     let testDrink;
 
     beforeEach(() => {
-        testDrink = createDrinkItem('Tea', 3.99, ['water', 'tea bag'], false);
+        testDrink = createDrinkItem({
+            name: 'Tea', 
+            price: 2.99, 
+        });
     });
 
     it('should return food item with inherited properties from createMenuItem', () => {
         expect(testDrink.hasOwnProperty('name')).toBe(true);
         expect(testDrink.hasOwnProperty('price')).toBe(true);
-        expect(testDrink.hasOwnProperty('ingredients')).toBe(true);
     });
     it('should set properties inherited from createMenuItems', () => {
         expect(testDrink.name).toBe('Tea');
-        expect(testDrink.price).toBe(3.99);
-        expect(testDrink.ingredients).toEqual(['water', 'tea bag']);
+        expect(testDrink.price).toBe(2.99);
     });
-    it('should set type property to "food"', () => {
+    it('should set type property to "drink"', () => {
         expect(testDrink.type).toBe('drink');
-    });
-    it('should set isVegetarian property', () => {
-        expect(testDrink.isAlcoholic).toBe(false);
     });
 });
