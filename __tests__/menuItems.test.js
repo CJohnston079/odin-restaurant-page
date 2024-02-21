@@ -4,7 +4,12 @@ describe('createFoodItem', () => {
     let testFood;
 
     beforeEach(() => {
-        testFood = createFoodItem('Sandwich', 5.99, ['bread', 'butter'], true);
+        testFood = createFoodItem({
+            name: 'Sandwich',
+            price: 5.99,
+            ingredients: ['bread', 'butter'],
+            isVegetarian: true
+        });
     });
 
     it('should return food item with inherited properties from createMenuItem', () => {
@@ -29,7 +34,12 @@ describe('createDrinksItem', () => {
     let testDrink;
 
     beforeEach(() => {
-        testDrink = createDrinkItem('Tea', 3.99, ['water', 'tea bag'], false);
+        testDrink = createDrinkItem({
+            name: 'Tea', 
+            price: 3.99, 
+            ingredients: ['water', 'tea bag'], 
+            isAlcoholic: false
+        });
     });
 
     it('should return food item with inherited properties from createMenuItem', () => {
