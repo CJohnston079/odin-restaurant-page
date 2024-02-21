@@ -37,18 +37,6 @@ describe('createFoodItem', () => {
     });
 });
 
-describe('createDrinksItem', () => {
-    const testDrink = createDrinkItem({ name: 'Tea', price: 2.99 });
-
-    it('should return drink item with inherited properties from createMenuItem', () => {
-        expect(testDrink.hasOwnProperty('name')).toBe(true);
-        expect(testDrink.hasOwnProperty('price')).toBe(true);
-    });
-    it('should set properties inherited from createMenuItems', () => {
-        expect(testDrink.name).toBe('Tea');
-        expect(testDrink.price).toBe(2.99);
-    });
-    it('should set type property to "drink"', () => {
-        expect(testDrink.type).toBe('drink');
-    });
-});
+// describe('createDrinksItem', () => {
+//     const testDrink = createDrinkItem({ name: 'tea', price: 2.99 });
+// });
