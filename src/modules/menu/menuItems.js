@@ -19,7 +19,19 @@ const createFoodItem = function(name, price, ingredients, isVegetarian) {
 }
 
 const createDrinkItem = function (name, price, ingredients, isAlcoholic) {
-    return
+    const {
+        name: drinkName,
+        price: drinkPrice,
+        ingredients: drinkIngredients
+    } = createMenuItem(name, price, ingredients);
+
+    return {
+        name: drinkName,
+        price: drinkPrice,
+        ingredients: drinkIngredients,
+        type: 'drink',
+        isAlcoholic
+    };
 }
 
 export { createFoodItem, createDrinkItem };
