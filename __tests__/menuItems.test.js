@@ -1,4 +1,4 @@
-import { createFoodItem } from "../src/modules/menu/menuItems";
+import { createFoodItem, createDrinkItem } from "../src/modules/menu/menuItems";
 
 describe('createFoodItem', () => {
     let testFood;
@@ -22,5 +22,30 @@ describe('createFoodItem', () => {
     });
     it('should set isVegetarian property', () => {
         expect(testFood.isVegetarian).toBe(true);
+    });
+});
+
+describe('createDrinksItem', () => {
+    let testDrink;
+
+    beforeEach(() => {
+        testDrink = createDrinkItem('Tea', 3.99, ['water', 'tea bag'], false);
+    });
+
+    it('should return food item with inherited properties from createMenuItem', () => {
+        expect(testDrink.hasOwnProperty('name')).toBe(true);
+        expect(testDrink.hasOwnProperty('price')).toBe(true);
+        expect(testDrink.hasOwnProperty('ingredients')).toBe(true);
+    });
+    it('should set properties inherited from createMenuItems', () => {
+        expect(testDrink.name).toBe('Tea');
+        expect(testDrink.price).toBe(3.99);
+        expect(testDrink.ingredients).toEqual(['water', 'tea bag']);
+    });
+    it('should set type property to "food"', () => {
+        expect(testDrink.type).toBe('drink');
+    });
+    it('should set isVegetarian property', () => {
+        expect(testDrink.isAlcoholic).toBe(false);
     });
 });
