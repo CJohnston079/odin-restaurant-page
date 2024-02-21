@@ -15,33 +15,25 @@ describe('createMenuItem', () => {
             name: 'test menu item',
             price: 3.99,
             type: funcName === 'createFoodItem' ? 'food' : 'drink',
+            isVegetarian: funcName === 'createFoodItem' ? false : undefined,
         });
     });
 });
 
 describe('createFoodItem', () => {
     const testFood = createFoodItem({
-        name: 'Sandwich',
+        name: 'bacon sandwich',
         price: 3.99,
-        ingredients: ['bread', 'butter'],
-        isVegetarian: true
+        ingredients: ['bread', 'bacon'],
     });
-
-    it('should return food item with inherited properties from createMenuItem', () => {
-        expect(testFood.hasOwnProperty('name')).toBe(true);
-        expect(testFood.hasOwnProperty('price')).toBe(true);
+    it('should have an array property of "ingredients"', () => {
         expect(testFood.hasOwnProperty('ingredients')).toBe(true);
+        expect(Array.isArray(testFood.ingredients)).toBe(true);
+        expect(testFood.ingredients).toEqual(['bread', 'bacon']);
     });
-    it('should set properties inherited from createMenuItems', () => {
-        expect(testFood.name).toBe('Sandwich');
-        expect(testFood.price).toBe(3.99);
-        expect(testFood.ingredients).toEqual(['bread', 'butter']);
-    });
-    it('should set type property to "food"', () => {
-        expect(testFood.type).toBe('food');
-    });
-    it('should set isVegetarian property', () => {
-        expect(testFood.isVegetarian).toBe(true);
+    it('should have isVegetarian property which defaults to false', () => {
+        expect(testFood.hasOwnProperty('isVegetarian')).toBe(true);
+        expect(testFood.isVegetarian).toBe(false);
     });
 });
 
