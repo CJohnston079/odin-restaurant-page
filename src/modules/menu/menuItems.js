@@ -3,12 +3,35 @@ const createMenuItem = function(name, price, ingredients) {
 }
 
 const createFoodItem = function(name, price, ingredients, isVegetarian) {
-    const foodItem = createMenuItem(name, price, ingredients)
+    const {
+        name: foodName,
+        price: foodPrice,
+        ingredients: foodIngredients
+    } = createMenuItem(name, price, ingredients);
     
-    foodItem.isVegetarian = isVegetarian;
-    foodItem.type = 'food';
-
-    return foodItem;
+    return {
+        name: foodName,
+        price: foodPrice,
+        ingredients: foodIngredients,
+        type: 'food',
+        isVegetarian
+    };
 }
 
-export { createFoodItem };
+const createDrinkItem = function (name, price, ingredients, isAlcoholic) {
+    const {
+        name: drinkName,
+        price: drinkPrice,
+        ingredients: drinkIngredients
+    } = createMenuItem(name, price, ingredients);
+
+    return {
+        name: drinkName,
+        price: drinkPrice,
+        ingredients: drinkIngredients,
+        type: 'drink',
+        isAlcoholic
+    };
+}
+
+export { createFoodItem, createDrinkItem };
