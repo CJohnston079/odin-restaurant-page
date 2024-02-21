@@ -1,15 +1,30 @@
 import { createFoodItem, createDrinkItem } from "../src/modules/menu/menuItems";
 
-describe('createFoodItem', () => {
-    let testFood;
+describe('createMenuItem', () => {
+    it.each([
+      ['createFoodItem', createFoodItem],
+      ['createDrinkItem', createDrinkItem],
+    ])('%s should inherit the provided properties from createMenuItem', (funcName, createItem) => {
+        const testMenuItem = createItem({ name: 'test menu item', price: 3.99 });
 
-    beforeEach(() => {
-        testFood = createFoodItem({
-            name: 'Sandwich',
+        expect(testMenuItem).toHaveProperty('name');
+        expect(testMenuItem).toHaveProperty('price');
+        expect(testMenuItem).toHaveProperty('type');
+
+        expect(testMenuItem).toEqual({
+            name: 'test menu item',
             price: 3.99,
-            ingredients: ['bread', 'butter'],
-            isVegetarian: true
+            type: funcName === 'createFoodItem' ? 'food' : 'drink',
         });
+    });
+});
+
+describe('createFoodItem', () => {
+    const testFood = createFoodItem({
+        name: 'Sandwich',
+        price: 3.99,
+        ingredients: ['bread', 'butter'],
+        isVegetarian: true
     });
 
     it('should return food item with inherited properties from createMenuItem', () => {
@@ -31,16 +46,9 @@ describe('createFoodItem', () => {
 });
 
 describe('createDrinksItem', () => {
-    let testDrink;
+    const testDrink = createDrinkItem({ name: 'Tea', price: 2.99 });
 
-    beforeEach(() => {
-        testDrink = createDrinkItem({
-            name: 'Tea', 
-            price: 2.99, 
-        });
-    });
-
-    it('should return food item with inherited properties from createMenuItem', () => {
+    it('should return drink item with inherited properties from createMenuItem', () => {
         expect(testDrink.hasOwnProperty('name')).toBe(true);
         expect(testDrink.hasOwnProperty('price')).toBe(true);
     });
