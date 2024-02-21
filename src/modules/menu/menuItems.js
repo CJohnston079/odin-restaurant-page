@@ -2,7 +2,7 @@ const createMenuItem = function({ name, price, type }) {
     return { name, price, type };
 };
 
-const createFoodItem = function({ name, price, ingredients, isVegetarian }) {
+const createFoodItem = function({ name, price, ingredients, isVegetarian = false }) {
     const newFood = createMenuItem({ name, price, type: 'food' });
     return { ...newFood, ingredients, isVegetarian };
 };
