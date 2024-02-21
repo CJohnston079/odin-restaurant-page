@@ -1,15 +1,14 @@
-const createMenuItem = function({ name, price, ingredients, type }) {
-    return { name, price, ingredients, type };
+const createMenuItem = function({ name, price, type }) {
+    return { name, price, type };
 };
 
 const createFoodItem = function({ name, price, ingredients, isVegetarian }) {
-    const menuItem = createMenuItem({ name, price, ingredients, type: 'food' });
-    return { ...menuItem, isVegetarian };
+    const newFood = createMenuItem({ name, price, type: 'food' });
+    return { ...newFood, ingredients, isVegetarian };
 };
 
-const createDrinkItem = function({ name, price, ingredients, isAlcoholic }) {
-    const menuItem = createMenuItem({ name, price, ingredients, type: 'drink' });
-    return { ...menuItem, isAlcoholic };
+const createDrinkItem = function({ name, price }) {
+    return createMenuItem({ name, price, type: 'drink' });
 };
 
 export { createFoodItem, createDrinkItem };
