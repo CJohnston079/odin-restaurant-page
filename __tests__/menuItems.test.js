@@ -1,9 +1,9 @@
-import { createFoodItem, createDrinkItem } from "../src/modules/menu/menuItems";
+import { createFood, createDrink } from "../src/modules/menu/menuItems";
 
 describe('createMenuItem', () => {
     it.each([
-      ['createFoodItem', createFoodItem],
-      ['createDrinkItem', createDrinkItem],
+      ['createFood', createFood],
+      ['createDrink', createDrink],
     ])('%s should inherit the provided properties from createMenuItem', (funcName, createItem) => {
         const testMenuItem = createItem({ name: 'test menu item', price: 3.99 });
 
@@ -14,14 +14,14 @@ describe('createMenuItem', () => {
         expect(testMenuItem).toEqual({
             name: 'test menu item',
             price: 3.99,
-            type: funcName === 'createFoodItem' ? 'food' : 'drink',
-            isVegetarian: funcName === 'createFoodItem' ? false : undefined,
+            type: funcName === 'createFood' ? 'food' : 'drink',
+            isVegetarian: funcName === 'createFood' ? false : undefined,
         });
     });
 });
 
-describe('createFoodItem', () => {
-    const testFood = createFoodItem({
+describe('createFood', () => {
+    const testFood = createFood({
         name: 'bacon sandwich',
         price: 3.99,
         ingredients: ['bread', 'bacon'],
@@ -38,5 +38,5 @@ describe('createFoodItem', () => {
 });
 
 // describe('createDrinksItem', () => {
-//     const testDrink = createDrinkItem({ name: 'tea', price: 2.99 });
+//     const testDrink = createDrink({ name: 'tea', price: 2.99 });
 // });
