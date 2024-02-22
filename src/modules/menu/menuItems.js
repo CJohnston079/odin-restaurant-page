@@ -1,14 +1,22 @@
-const createMenuItem = function({ name, price, type }) {
-    return { name, price, type };
+const createMenuItem = function({ name, type, price, allergens = {} }) {
+    const { isGlutenFree = false, isVegetarian = false, isVegan = false } = allergens;
+    
+    return {
+        name,
+        type,
+        price,
+        allergens: { isGlutenFree, isVegetarian, isVegan }
+    };
 };
 
-const createFood = function({ name, price, ingredients, isVegetarian = false }) {
-    const newFood = createMenuItem({ name, price, type: 'food' });
-    return { ...newFood, ingredients, isVegetarian };
+const createFood = function({ name, price, ingredients, allergens = {} }) {
+    const newFood = createMenuItem({ name, type: 'food', price, allergens });
+    
+    return { ...newFood, ingredients };
 };
 
-const createDrink = function({ name, price }) {
-    return createMenuItem({ name, price, type: 'drink' });
+const createDrink = function({ name, price, allergens = {} }) {
+    return createMenuItem({ name, type: 'drink', price, allergens });
 };
 
 export { createFood, createDrink };

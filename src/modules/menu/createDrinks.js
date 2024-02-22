@@ -5,7 +5,8 @@ const createWine = function({
     bottlePrice,
     country,
     description,
-    wineType
+    wineType,
+    allergens = {}
 }) {
     const newWine = createDrink({
         name,
@@ -13,7 +14,8 @@ const createWine = function({
             '175ml': Math.ceil(bottlePrice * 0.3) - 0.05,
             '250ml': Math.ceil(bottlePrice * 0.4) - 0.05,
             '750ml': bottlePrice
-        }
+        },
+        allergens
     });
 
     return { ...newWine, drinkType: 'wine', wineType, country, description }
