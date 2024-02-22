@@ -5,17 +5,22 @@ describe('createMenuItem', () => {
       ['createFood', createFood],
       ['createDrink', createDrink],
     ])('%s should inherit the provided properties from createMenuItem', (funcName, createItem) => {
-        const testMenuItem = createItem({ name: 'test menu item', price: 3.99 });
+        const testMenuItem = createItem({
+            name: 'test menu item',
+            price: 3.99,
+            allergens: { isVegetarian: true }
+        });
 
         expect(testMenuItem).toHaveProperty('name');
-        expect(testMenuItem).toHaveProperty('price');
         expect(testMenuItem).toHaveProperty('type');
+        expect(testMenuItem).toHaveProperty('price');
+        expect(testMenuItem).toHaveProperty('allergens');
 
         expect(testMenuItem).toEqual({
             name: 'test menu item',
-            price: 3.99,
             type: funcName === 'createFood' ? 'food' : 'drink',
-            isVegetarian: funcName === 'createFood' ? false : undefined,
+            price: 3.99,
+            allergens: { isGlutenFree: false, isVegetarian: true, isVegan: false }
         });
     });
 });
@@ -30,10 +35,6 @@ describe('createFood', () => {
         expect(testFood.hasOwnProperty('ingredients')).toBe(true);
         expect(Array.isArray(testFood.ingredients)).toBe(true);
         expect(testFood.ingredients).toEqual(['bread', 'bacon']);
-    });
-    it('should have isVegetarian property which defaults to false', () => {
-        expect(testFood.hasOwnProperty('isVegetarian')).toBe(true);
-        expect(testFood.isVegetarian).toBe(false);
     });
 });
 
