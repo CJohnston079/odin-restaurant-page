@@ -1,10 +1,10 @@
-import './menu.css'
+import "./menu.css";
 
-const createMenuSection = function() {
-    const section = document.createElement("section");
-    section.id = "menu";
+const createMenuSection = function () {
+	const section = document.createElement("section");
+	section.id = "menu";
 
-    return section;
-}
+	return section;
+};
 
 export default createMenuSection;
