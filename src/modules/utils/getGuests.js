@@ -7,9 +7,9 @@ const getGuests = function(guests=2) {
 
     for (let i = 2; i <= guests; i += 1) {
         guestOptions.push(`${i} people`);
-    };
+    }
 
     return guestOptions;
-};
+}
 
 export default getGuests;

@@ -6,8 +6,8 @@ const getTimes = function() {
         }
         times.push(i + ':00');
         times.push(i + ':30');
-    };
+    }
     return times;
-};
+}
 
 export default getTimes;
