@@ -21,6 +21,10 @@ const createWine = function ({
 	return { ...newWine, drinkType: "wine", wineType, country, description };
 };
 
-const createCocktail = function () {};
+const createCocktail = function ({ name, price, ingredients, isAlcoholic = true, allergens = {} }) {
+	const newCocktail = createDrink({ name, price, allergens });
+
+	return { ...newCocktail, drinkType: "cocktail", ingredients, isAlcoholic };
+};
 
 export { createWine, createCocktail };
