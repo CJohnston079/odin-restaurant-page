@@ -27,4 +27,8 @@ const createCocktail = function ({ name, price, ingredients, isAlcoholic = true,
 	return { ...newCocktail, drinkType: "cocktail", ingredients, isAlcoholic };
 };
 
-export { createWine, createCocktail };
+const createSoftDrink = function () {
+	return;
+};
+
+export { createWine, createCocktail, createSoftDrink };

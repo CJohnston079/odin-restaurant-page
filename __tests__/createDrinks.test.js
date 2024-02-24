@@ -1,4 +1,4 @@
-import { createWine, createCocktail } from "../src/modules/menu/createDrinks";
+import { createWine, createCocktail, createSoftDrink } from "../src/modules/menu/createDrinks";
 
 describe("createWine", () => {
 	const testWine = createWine({
@@ -33,5 +33,24 @@ describe("createCocktail", () => {
 		expect(testWine.allergens).toEqual({ isGlutenFree: true, isVegetarian: false, isVegan: true });
 		expect(testWine.ingredients).toEqual(["mint leaves", "sugar", "soda water", "lime"]);
 		expect(testWine.drinkType).toBe("cocktail");
+	});
+});
+describe("createSoftDrink", () => {
+	const testBottledDrink = createSoftDrink({
+		name: "sparkling water",
+		price: 2.95,
+		allergens: { isGlutenFree: true, isVegan: true },
+		size: "275ml",
+	});
+	it("should return a new soft drink with the provided properties", () => {
+		expect(testBottledDrink.name).toBe("sparkling water");
+		expect(testBottledDrink.price).toBe(2.95);
+		expect(testBottledDrink.allergens).toEqual({
+			isGlutenFree: true,
+			isVegetarian: false,
+			isVegan: true,
+		});
+		expect(testBottledDrink.size).toBe("275ml");
+		expect(testBottledDrink.drinkType).toBe("soft drink");
 	});
 });
