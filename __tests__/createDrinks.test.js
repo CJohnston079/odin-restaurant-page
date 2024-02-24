@@ -1,4 +1,9 @@
-import { createWine, createCocktail, createSoftDrink } from "../src/modules/menu/createDrinks";
+import {
+	createWine,
+	createCocktail,
+	createBottledDrink,
+	createSoftDrink,
+} from "../src/modules/menu/createDrinks";
 
 describe("createWine", () => {
 	const testWine = createWine({
@@ -34,6 +39,25 @@ describe("createCocktail", () => {
 		expect(testWine.ingredients).toEqual(["mint leaves", "sugar", "soda water", "lime"]);
 		expect(testWine.drinkType).toBe("cocktail");
 	});
+});
+describe("createBottledDrink", () => {
+	const testBottledDrink = createBottledDrink({
+		name: "peroni",
+		price: 4.95,
+		allergens: { isVegan: true },
+		size: "330ml",
+		alcoholContent: 0.05,
+	});
+	expect(testBottledDrink.name).toBe("peroni");
+	expect(testBottledDrink.price).toBe(4.95);
+	expect(testBottledDrink.allergens).toEqual({
+		isGlutenFree: false,
+		isVegetarian: false,
+		isVegan: true,
+	});
+	expect(testBottledDrink.size).toBe("330ml");
+	expect(testBottledDrink.drinkType).toBe("bottled drink");
+	expect(testBottledDrink.alcoholContent).toBe(0.05);
 });
 describe("createSoftDrink", () => {
 	const testSoftDrink = createSoftDrink({
