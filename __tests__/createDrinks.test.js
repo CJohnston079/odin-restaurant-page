@@ -36,21 +36,21 @@ describe("createCocktail", () => {
 	});
 });
 describe("createSoftDrink", () => {
-	const testBottledDrink = createSoftDrink({
+	const testSoftDrink = createSoftDrink({
 		name: "sparkling water",
 		price: 2.95,
 		allergens: { isGlutenFree: true, isVegan: true },
 		size: "275ml",
 	});
 	it("should return a new soft drink with the provided properties", () => {
-		expect(testBottledDrink.name).toBe("sparkling water");
-		expect(testBottledDrink.price).toBe(2.95);
-		expect(testBottledDrink.allergens).toEqual({
+		expect(testSoftDrink.name).toBe("sparkling water");
+		expect(testSoftDrink.price).toBe(2.95);
+		expect(testSoftDrink.allergens).toEqual({
 			isGlutenFree: true,
 			isVegetarian: false,
 			isVegan: true,
 		});
-		expect(testBottledDrink.size).toBe("275ml");
-		expect(testBottledDrink.drinkType).toBe("soft drink");
+		expect(testSoftDrink.size).toBe("275ml");
+		expect(testSoftDrink.drinkType).toBe("soft drink");
 	});
 });
