@@ -3,6 +3,7 @@ import {
 	createCocktail,
 	createBottledDrink,
 	createSoftDrink,
+	createHotDrink,
 } from "../src/modules/menu/createDrinks";
 
 describe("createWine", () => {
@@ -77,4 +78,19 @@ describe("createSoftDrink", () => {
 		expect(testSoftDrink.size).toBe("275ml");
 		expect(testSoftDrink.drinkType).toBe("soft drink");
 	});
+});
+describe("createHotDrink", () => {
+	const testHotDrink = createHotDrink({
+		name: "tea",
+		price: 2.95,
+		allergens: { isGlutenFree: true, isVegan: true },
+	});
+	expect(testHotDrink.name).toBe("tea");
+	expect(testHotDrink.price).toBe(2.95);
+	expect(testHotDrink.allergens).toEqual({
+		isGlutenFree: true,
+		isVegetarian: false,
+		isVegan: true,
+	});
+	expect(testHotDrink.drinkType).toBe("hot drink");
 });
