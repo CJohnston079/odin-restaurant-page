@@ -39,8 +39,9 @@ const createSoftDrink = function ({ name, price, size, allergens = {} }) {
 	return { ...newSoftDrink, drinkType: "soft drink", size };
 };
 
-const createHotDrink = function () {
-	return;
+const createHotDrink = function ({ name, price, allergens = {} }) {
+	const newHotDrink = createDrink({ name, price, allergens });
+	return { ...newHotDrink, drinkType: "hot drink" };
 };
 
 export { createWine, createCocktail, createBottledDrink, createSoftDrink, createHotDrink };
