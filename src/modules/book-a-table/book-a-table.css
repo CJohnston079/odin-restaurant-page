@@ -1,121 +1,127 @@
 dialog {
-    position: static;
-    inset: 0;
+	position: static;
+	inset: 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 
-    background-color: black;
+	background-color: black;
 
-    transform-origin: top right;
+	transform-origin: top right;
 }
 
 dialog:focus-visible {
-    outline: none;
+	outline: none;
 }
 
 .dialog-open {
-    animation: scale-2d 600ms, border-round-to-sharp 600ms;
-    animation-fill-mode: backwards;
+	animation: scale-2d 600ms, border-round-to-sharp 600ms;
+	animation-fill-mode: backwards;
 }
 
 .dialog-closed {
-    animation: scale-2d 600ms reverse, border-round-to-sharp 600ms reverse;
-    animation-fill-mode: forwards;
+	animation: scale-2d 600ms reverse, border-round-to-sharp 600ms reverse;
+	animation-fill-mode: forwards;
 }
 
 form {
-    margin: 0 auto;
-    width: max(30vw, 24rem);
+	margin: 0 auto;
+	width: max(30vw, 24rem);
 
-    font-family: 'Poppins', sans-serif;
+	font-family: "Poppins", sans-serif;
 
-    background-color: black;
+	background-color: black;
 }
 
 label {
-    display: grid;
-    margin-bottom: 3rem;
+	display: grid;
+	margin-bottom: 3rem;
 
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    color: hsl(0, 0%, 60%);
+	font-size: 0.9rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	color: hsl(0, 0%, 60%);
 }
 
 input,
 select {
-    border: none;
-    border-bottom: solid white 1px;
-    padding: 0.5rem;
-    padding-left: 0.25rem;
+	border: none;
+	border-bottom: solid white 1px;
+	padding: 0.5rem;
+	padding-left: 0.25rem;
 
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    letter-spacing: 0.05rem;
-    color: white;
+	font-family: "Playfair Display", serif;
+	font-size: 1.5rem;
+	letter-spacing: 0.05rem;
+	color: white;
 
-    background: none;
+	background: none;
 }
 
 input:focus-visible,
 select:focus-visible {
-    outline: none;
+	outline: none;
+}
+
+input:not(:focus):invalid {
+	border-bottom-color: var(--accent-color);
+	color: var(--accent-color);
+	transition: 500ms;
 }
 
 form button {
-    width: 100%;
+	width: 100%;
 }
 
 .dialog-closed form *,
 .dialog-open button {
-    animation: fade 400ms reverse;
-    animation-fill-mode: forwards;
+	animation: fade 400ms reverse;
+	animation-fill-mode: forwards;
 }
 
 .dialog-open form *,
 .dialog-open button {
-    animation: fade 400ms;
-    animation-delay: 200ms;
-    animation-fill-mode: backwards;
+	animation: fade 400ms;
+	animation-delay: 200ms;
+	animation-fill-mode: backwards;
 }
 
 .close {
-    position: fixed;
-    inset: 1rem 1rem auto auto;
+	position: fixed;
+	inset: 1rem 1rem auto auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    border: solid 1px transparent;
-    border-radius: 1px;
-    padding: 0;
-    height: 3rem;
-    width: 3rem;
+	border: solid 1px transparent;
+	border-radius: 1px;
+	padding: 0;
+	height: 3rem;
+	width: 3rem;
 
-    font-size: 1.5rem;
-    font-weight: 200;
+	font-size: 1.5rem;
+	font-weight: 200;
 
-    background: none;
+	background: none;
 
-    transition: color 400ms, border-color 400ms;
+	transition: color 400ms, border-color 400ms;
 }
 
 .close:hover {
-    border-color: white;
+	border-color: white;
 }
 
 .dialog-closed .close {
-    display: none;
+	display: none;
 }
