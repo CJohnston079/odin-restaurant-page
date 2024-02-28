@@ -11,13 +11,7 @@ const createBookDialog = function () {
 
 	const form = document.createElement("form");
 
-	const inputs = {
-		dateInput: createLabelledDropdown("date", "Date", getNextTwoWeeks()),
-		timeInput: createLabelledDropdown("time", "Time", getTimes()),
-		guestsInput: createLabelledDropdown("number", "Number of guests", getGuests(8)),
-		nameInput: createLabelledInput("text", "Full name"),
-		emailInput: createLabelledInput("email", "Email address"),
-	};
+	const inputs = createFormInputs();
 
 	inputs.emailInput.pattern =
 		// https://emailregex.com/
@@ -30,6 +24,7 @@ const createBookDialog = function () {
 
 	const submitButton = createButton("Confirm reservation", "submit");
 	form.appendChild(submitButton);
+	form.noValidate = true;
 
 	const closeButton = createButton("×");
 	closeButton.classList.add("close");
@@ -47,6 +42,16 @@ const createBookDialog = function () {
 	dialog.appendChild(form);
 
 	return dialog;
+};
+
+const createFormInputs = function () {
+	return {
+		dateInput: createLabelledDropdown("date", "Date", getNextTwoWeeks()),
+		timeInput: createLabelledDropdown("time", "Time", getTimes()),
+		guestsInput: createLabelledDropdown("number", "Number of guests", getGuests(8)),
+		nameInput: createLabelledInput("text", "Full name"),
+		emailInput: createLabelledInput("email", "Email address"),
+	};
 };
 
 const createButton = function (buttonText, type = "button") {
