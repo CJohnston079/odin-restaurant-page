@@ -7,20 +7,7 @@ import getGuests from "../utils/getGuests";
 const createBookDialog = function () {
 	const dialog = createDialog();
 	const form = createForm();
-	const inputs = createFormInputs();
-	const submitButton = createButton("Confirm reservation", "submit");
 	const closeButton = createButton("×");
-
-	inputs.emailInput.pattern =
-		// https://emailregex.com/
-		// eslint-disable-next-line no-control-regex
-		"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)])";
-
-	for (const input in inputs) {
-		form.appendChild(inputs[input].label);
-	}
-
-	form.appendChild(submitButton);
 
 	closeButton.classList.add("close");
 	dialog.appendChild(closeButton);
@@ -50,7 +37,16 @@ const createDialog = function () {
 
 const createForm = function () {
 	const form = document.createElement("form");
+	const inputs = createFormInputs();
+	const submitButton = createButton("Confirm reservation", "submit");
 
+	for (const input in inputs) {
+		form.appendChild(inputs[input].label);
+	}
+
+	setEmailPattern(inputs.emailInput);
+
+	form.appendChild(submitButton);
 	form.noValidate = true;
 
 	return form;
@@ -105,6 +101,11 @@ const createLabelledDropdown = function (name, labelText, options) {
 	label.appendChild(select);
 
 	return { label, select };
+};
+
+const setEmailPattern = function (input) {
+	input.pattern =
+		"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)])";
 };
 
 export default createBookDialog;
