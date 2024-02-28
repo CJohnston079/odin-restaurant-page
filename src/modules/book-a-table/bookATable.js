@@ -5,14 +5,11 @@ import getTimes from "../utils/getTimes";
 import getGuests from "../utils/getGuests";
 
 const createBookDialog = function () {
-	const dialog = document.createElement("dialog");
+	const dialog = createDialog();
 	const form = document.createElement("form");
 	const inputs = createFormInputs();
 	const submitButton = createButton("Confirm reservation", "submit");
 	const closeButton = createButton("×");
-
-	dialog.id = "book-a-table";
-	dialog.classList.add("dialog-closed");
 
 	inputs.emailInput.pattern =
 		// https://emailregex.com/
@@ -39,6 +36,15 @@ const createBookDialog = function () {
 	});
 
 	dialog.appendChild(form);
+
+	return dialog;
+};
+
+const createDialog = function () {
+	const dialog = document.createElement("dialog");
+
+	dialog.id = "book-a-table";
+	dialog.classList.add("dialog-closed");
 
 	return dialog;
 };
