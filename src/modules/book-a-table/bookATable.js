@@ -6,12 +6,13 @@ import getGuests from "../utils/getGuests";
 
 const createBookDialog = function () {
 	const dialog = document.createElement("dialog");
+	const form = document.createElement("form");
+	const inputs = createFormInputs();
+	const submitButton = createButton("Confirm reservation", "submit");
+	const closeButton = createButton("×");
+
 	dialog.id = "book-a-table";
 	dialog.classList.add("dialog-closed");
-
-	const form = document.createElement("form");
-
-	const inputs = createFormInputs();
 
 	inputs.emailInput.pattern =
 		// https://emailregex.com/
@@ -22,11 +23,9 @@ const createBookDialog = function () {
 		form.appendChild(inputs[input].label);
 	}
 
-	const submitButton = createButton("Confirm reservation", "submit");
 	form.appendChild(submitButton);
 	form.noValidate = true;
 
-	const closeButton = createButton("×");
 	closeButton.classList.add("close");
 	dialog.appendChild(closeButton);
 	closeButton.addEventListener("mousedown", () => {
@@ -56,6 +55,7 @@ const createFormInputs = function () {
 
 const createButton = function (buttonText, type = "button") {
 	const button = document.createElement("button");
+
 	button.type = type;
 	button.textContent = buttonText;
 
@@ -64,9 +64,9 @@ const createButton = function (buttonText, type = "button") {
 
 const createLabelledInput = function (type, labelText) {
 	const label = document.createElement("label");
-	label.textContent = `${labelText}*:`;
-
 	const input = document.createElement("input");
+
+	label.textContent = `${labelText}*:`;
 	input.type = type;
 
 	label.appendChild(input);
@@ -76,13 +76,14 @@ const createLabelledInput = function (type, labelText) {
 
 const createLabelledDropdown = function (name, labelText, options) {
 	const label = document.createElement("label");
-	label.textContent = `${labelText}:`;
-
 	const select = document.createElement("select");
+
+	label.textContent = `${labelText}:`;
 	select.name = name;
 
 	options.forEach(optionText => {
 		const option = document.createElement("option");
+
 		option.value = optionText;
 		option.textContent = optionText;
 		select.appendChild(option);
