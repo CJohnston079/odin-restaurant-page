@@ -6,7 +6,7 @@ import getGuests from "../utils/getGuests";
 
 const createBookDialog = function () {
 	const dialog = createDialog();
-	const form = document.createElement("form");
+	const form = createForm();
 	const inputs = createFormInputs();
 	const submitButton = createButton("Confirm reservation", "submit");
 	const closeButton = createButton("×");
@@ -21,7 +21,6 @@ const createBookDialog = function () {
 	}
 
 	form.appendChild(submitButton);
-	form.noValidate = true;
 
 	closeButton.classList.add("close");
 	dialog.appendChild(closeButton);
@@ -47,6 +46,14 @@ const createDialog = function () {
 	dialog.classList.add("dialog-closed");
 
 	return dialog;
+};
+
+const createForm = function () {
+	const form = document.createElement("form");
+
+	form.noValidate = true;
+
+	return form;
 };
 
 const createFormInputs = function () {
