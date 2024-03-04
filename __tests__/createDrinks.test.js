@@ -1,6 +1,7 @@
 import {
 	createWine,
 	createCocktail,
+	createSpirit,
 	createBottledDrink,
 	createSoftDrink,
 	createHotDrink,
@@ -39,6 +40,29 @@ describe("createCocktail", () => {
 		expect(testWine.allergens).toEqual({ isGlutenFree: true, isVegetarian: false, isVegan: true });
 		expect(testWine.ingredients).toEqual(["mint leaves", "sugar", "soda water", "lime"]);
 		expect(testWine.drinkType).toBe("cocktail");
+	});
+});
+describe("createSpirit", () => {
+	const testSpirit = createSpirit({
+		name: "pink gin",
+		measurePrice: 7.95,
+		allergens: { isGlutenFree: true, isVegan: true },
+		mixer: "tonic",
+		description: "small batch gin from the isle of wight",
+		spiritType: "gin",
+	});
+	it("should return a new spirit object with provided properties", () => {
+		expect(testSpirit.name).toBe("pink gin");
+		expect(testSpirit.price).toEqual({ "25ml": 7.95, "50ml": 12.95 });
+		expect(testSpirit.allergens).toEqual({
+			isGlutenFree: true,
+			isVegetarian: false,
+			isVegan: true,
+		});
+		expect(testSpirit.mixer).toBe("tonic");
+		expect(testSpirit.description).toBe("small batch gin from the isle of wight");
+		expect(testSpirit.drinkType).toBe("spirit");
+		expect(testSpirit.spiritType).toBe("gin");
 	});
 });
 describe("createBottledDrink", () => {
