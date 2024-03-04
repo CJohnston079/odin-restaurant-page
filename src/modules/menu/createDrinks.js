@@ -27,6 +27,10 @@ const createCocktail = function ({ name, price, ingredients, isAlcoholic = true,
 	return { ...newCocktail, drinkType: "cocktail", ingredients, isAlcoholic };
 };
 
+const createSpirit = function () {
+	return;
+};
+
 const createBottledDrink = function ({ name, price, size, alcoholContent, allergens = {} }) {
 	const newBottledDrink = createDrink({ name, price, allergens });
 
@@ -44,4 +48,11 @@ const createHotDrink = function ({ name, price, allergens = {} }) {
 	return { ...newHotDrink, drinkType: "hot drink" };
 };
 
-export { createWine, createCocktail, createBottledDrink, createSoftDrink, createHotDrink };
+export {
+	createWine,
+	createCocktail,
+	createSpirit,
+	createBottledDrink,
+	createSoftDrink,
+	createHotDrink,
+};
