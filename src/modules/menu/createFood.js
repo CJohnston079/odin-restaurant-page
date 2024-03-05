@@ -1,11 +1,12 @@
-// import { createFood } from "./menuItems";
+import { createFood } from "./menuItems";
 
 const createStarter = function () {
 	return;
 };
 
-const createSide = function () {
-	return;
+const createSide = function ({ name, price, description, allergens = {}, isSpecial = false }) {
+	const newSide = createFood({ name, price, allergens });
+	return { ...newSide, course: "side", description, isSpecial };
 };
 
 const createMain = function () {
