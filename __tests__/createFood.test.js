@@ -2,7 +2,7 @@ import {
 	createStarter,
 	createSide,
 	// createMain,
-	// createDessert,
+	createDessert,
 } from "../src/modules/menu/createFood";
 
 describe("createStarter", () => {
@@ -44,4 +44,24 @@ describe("createSide", () => {
 	});
 });
 describe("createMain", () => {});
-describe("createDessert", () => {});
+describe("createDessert", () => {
+	const testDessert = createDessert({
+		name: "tiramisu",
+		price: 6.95,
+		allergens: { isVegetarian: true },
+		description: "coffee-flavoured Italian dessert",
+		course: "side",
+	});
+	it("should return a new side dish object with provided properties", () => {
+		expect(testDessert.name).toBe("tiramisu");
+		expect(testDessert.price).toBe(6.95);
+		expect(testDessert.allergens).toEqual({
+			isGlutenFree: false,
+			isVegetarian: true,
+			isVegan: false,
+		});
+		expect(testDessert.description).toBe("coffee-flavoured Italian dessert");
+		expect(testDessert.course).toBe("dessert");
+		expect(testDessert.isSpecial).toBe(false);
+	});
+});
