@@ -1,7 +1,7 @@
 import {
 	createStarter,
 	createSide,
-	// createMain,
+	createMain,
 	createDessert,
 } from "../src/modules/menu/createFood";
 
@@ -11,7 +11,6 @@ describe("createStarter", () => {
 		price: 5.95,
 		allergens: { isVegetarian: true },
 		description: "brushed with garlic and parsley butter",
-		course: "starter",
 	});
 	it("should return a starter course object with provided properties", () => {
 		expect(testStarter.name).toBe("pesto pomodoro bread");
@@ -32,7 +31,6 @@ describe("createSide", () => {
 		price: 4.95,
 		allergens: { isGlutenFree: true, isVegan: true },
 		description: "french beans, tenderstem broccoli & chantenay carrots",
-		course: "side",
 	});
 	it("should return a new side dish object with provided properties", () => {
 		expect(testSide.name).toBe("sautéed garlic vegetables");
@@ -43,16 +41,36 @@ describe("createSide", () => {
 		expect(testSide.isSpecial).toBe(false);
 	});
 });
-describe("createMain", () => {});
+describe("createMain", () => {
+	const testMain = createMain({
+		name: "calabrese",
+		price: 16.95,
+		description: "dry-cured pork sausage, speck, Milano salami, cherry bell peppers",
+		isSpecial: true,
+	});
+	it("should return a new main dish object with provided properties", () => {
+		expect(testMain.name).toBe("calabrese");
+		expect(testMain.price).toBe(16.95);
+		expect(testMain.allergens).toEqual({
+			isGlutenFree: false,
+			isVegetarian: false,
+			isVegan: false,
+		});
+		expect(testMain.description).toBe(
+			"dry-cured pork sausage, speck, Milano salami, cherry bell peppers"
+		);
+		expect(testMain.course).toBe("main");
+		expect(testMain.isSpecial).toBe(true);
+	});
+});
 describe("createDessert", () => {
 	const testDessert = createDessert({
 		name: "tiramisu",
 		price: 6.95,
 		allergens: { isVegetarian: true },
 		description: "coffee-flavoured Italian dessert",
-		course: "side",
 	});
-	it("should return a new side dish object with provided properties", () => {
+	it("should return a new dessert dish object with provided properties", () => {
 		expect(testDessert.name).toBe("tiramisu");
 		expect(testDessert.price).toBe(6.95);
 		expect(testDessert.allergens).toEqual({
