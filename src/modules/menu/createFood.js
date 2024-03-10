@@ -14,8 +14,9 @@ const createMain = function () {
 	return;
 };
 
-const createDessert = function () {
-	return;
+const createDessert = function ({ name, price, description, allergens = {}, isSpecial = false }) {
+	const newDessert = createFood({ name, price, allergens });
+	return { ...newDessert, course: "dessert", description, isSpecial };
 };
 
 export { createStarter, createSide, createMain, createDessert };
