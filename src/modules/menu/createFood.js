@@ -10,8 +10,9 @@ const createSide = function ({ name, price, description, allergens = {}, isSpeci
 	return { ...newSide, course: "side", description, isSpecial };
 };
 
-const createMain = function () {
-	return;
+const createMain = function ({ name, price, description, allergens = {}, isSpecial = false }) {
+	const newMain = createFood({ name, price, allergens });
+	return { ...newMain, course: "main", description, isSpecial };
 };
 
 const createDessert = function ({ name, price, description, allergens = {}, isSpecial = false }) {
