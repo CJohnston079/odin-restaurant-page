@@ -11,6 +11,7 @@ describe("createStarter", () => {
 		price: 5.95,
 		allergens: { isVegetarian: true },
 		description: "brushed with garlic and parsley butter",
+		calories: 385,
 	});
 	it("should return a starter course object with provided properties", () => {
 		expect(testStarter.name).toBe("pesto pomodoro bread");
@@ -21,6 +22,7 @@ describe("createStarter", () => {
 			isVegan: false,
 		});
 		expect(testStarter.description).toBe("brushed with garlic and parsley butter");
+		expect(testStarter.calories).toBe(385);
 		expect(testStarter.course).toBe("starter");
 		expect(testStarter.isSpecial).toBe(false);
 	});
@@ -31,12 +33,14 @@ describe("createSide", () => {
 		price: 4.95,
 		allergens: { isGlutenFree: true, isVegan: true },
 		description: "french beans, tenderstem broccoli & chantenay carrots",
+		calories: 80,
 	});
 	it("should return a new side dish object with provided properties", () => {
 		expect(testSide.name).toBe("sautéed garlic vegetables");
 		expect(testSide.price).toBe(4.95);
 		expect(testSide.allergens).toEqual({ isGlutenFree: true, isVegetarian: false, isVegan: true });
 		expect(testSide.description).toBe("french beans, tenderstem broccoli & chantenay carrots");
+		expect(testSide.calories).toBe(80);
 		expect(testSide.course).toBe("side");
 		expect(testSide.isSpecial).toBe(false);
 	});
@@ -46,6 +50,7 @@ describe("createMain", () => {
 		name: "calabrese",
 		price: 16.95,
 		description: "dry-cured pork sausage, speck, Milano salami, cherry bell peppers",
+		calories: 1275,
 		isSpecial: true,
 	});
 	it("should return a new main dish object with provided properties", () => {
@@ -59,6 +64,7 @@ describe("createMain", () => {
 		expect(testMain.description).toBe(
 			"dry-cured pork sausage, speck, Milano salami, cherry bell peppers"
 		);
+		expect(testMain.calories).toBe(1275);
 		expect(testMain.course).toBe("main");
 		expect(testMain.isSpecial).toBe(true);
 	});
@@ -69,6 +75,7 @@ describe("createDessert", () => {
 		price: 6.95,
 		allergens: { isVegetarian: true },
 		description: "coffee-flavoured Italian dessert",
+		calories: 515,
 	});
 	it("should return a new dessert dish object with provided properties", () => {
 		expect(testDessert.name).toBe("tiramisu");
@@ -79,6 +86,7 @@ describe("createDessert", () => {
 			isVegan: false,
 		});
 		expect(testDessert.description).toBe("coffee-flavoured Italian dessert");
+		expect(testDessert.calories).toBe(515);
 		expect(testDessert.course).toBe("dessert");
 		expect(testDessert.isSpecial).toBe(false);
 	});
