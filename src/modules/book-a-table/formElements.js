@@ -9,6 +9,10 @@ const createForm = function () {
 	const inputs = createFormInputs();
 	const submitButton = createButton("Confirm reservation", "submit");
 
+	submitButton.addEventListener("click", e => {
+		e.preventDefault();
+	});
+
 	for (const input in inputs) {
 		form.appendChild(inputs[input].label);
 	}
