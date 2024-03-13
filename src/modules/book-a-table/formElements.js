@@ -41,6 +41,9 @@ const createFormInputs = function () {
 		emailInput: createLabelledInput("email", "Email address"),
 	};
 
+	inputs.nameInput.input.setAttribute("required", true);
+	inputs.emailInput.input.setAttribute("required", true);
+
 	setEmailPattern(inputs.emailInput);
 
 	return inputs;
