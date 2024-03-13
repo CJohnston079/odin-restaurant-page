@@ -9,18 +9,16 @@ const createForm = function () {
 	const inputs = createFormInputs();
 	const submitButton = createButton("Confirm reservation", "submit");
 
-	submitButton.addEventListener("click", e => {
-		e.preventDefault();
-	});
-
 	for (const input in inputs) {
 		form.appendChild(inputs[input].label);
 	}
 
-	setEmailPattern(inputs.emailInput);
-
 	form.appendChild(submitButton);
 	form.noValidate = true;
+
+	submitButton.addEventListener("click", e => {
+		e.preventDefault();
+	});
 
 	return form;
 };
@@ -35,13 +33,17 @@ const createButton = function (buttonText, type = "button") {
 };
 
 const createFormInputs = function () {
-	return {
+	const inputs = {
 		dateInput: createLabelledDropdown("date", "Date", getNextTwoWeeks()),
 		timeInput: createLabelledDropdown("time", "Time", getTimes()),
 		guestsInput: createLabelledDropdown("number", "Number of guests", getGuests(8)),
 		nameInput: createLabelledInput("text", "Full name"),
 		emailInput: createLabelledInput("email", "Email address"),
 	};
+
+	setEmailPattern(inputs.emailInput);
+
+	return inputs;
 };
 
 const createLabelledInput = function (type, labelText) {
