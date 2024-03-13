@@ -44,6 +44,9 @@ const createFormInputs = function () {
 	inputs.nameInput.input.setAttribute("required", true);
 	inputs.emailInput.input.setAttribute("required", true);
 
+	inputs.nameInput.input.placeholder = "";
+	inputs.emailInput.input.placeholder = "";
+
 	setEmailPattern(inputs.emailInput);
 
 	return inputs;
