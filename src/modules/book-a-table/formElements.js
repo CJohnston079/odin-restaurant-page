@@ -1,4 +1,5 @@
 import { getGuests, getNextTwoWeeks, getTimes } from "../utils/utils.js";
+import { checkFormIsValid } from "./validateForm.js";
 
 const createForm = function () {
 	const form = document.createElement("form");
@@ -14,19 +15,7 @@ const createForm = function () {
 
 	submitButton.addEventListener("click", e => {
 		e.preventDefault();
-
-		const nameInput = form.children[3].lastChild;
-		const emailInput = form.children[4].lastChild;
-
-		if (nameInput.validity.valueMissing || emailInput.validity.valueMissing) {
-			alert("please fill in all fields");
-			return;
-		}
-
-		if (!emailInput.checkValidity()) {
-			alert("please enter a vaid email address");
-			return;
-		}
+		checkFormIsValid(form);
 	});
 
 	return form;
