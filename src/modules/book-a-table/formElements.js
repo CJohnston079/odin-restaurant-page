@@ -1,6 +1,4 @@
-import getNextTwoWeeks from "../utils/getNextTwoWeeks";
-import getTimes from "../utils/getTimes";
-import getGuests from "../utils/getGuests";
+import { getGuests, getNextTwoWeeks, getTimes } from "../utils/utils.js";
 
 const createForm = function () {
 	const form = document.createElement("form");
