@@ -1,5 +1,3 @@
-import { setEmailPattern } from "./validateForm";
-
 import getNextTwoWeeks from "../utils/getNextTwoWeeks";
 import getTimes from "../utils/getTimes";
 import getGuests from "../utils/getGuests";
@@ -18,6 +16,19 @@ const createForm = function () {
 
 	submitButton.addEventListener("click", e => {
 		e.preventDefault();
+
+		const nameInput = form.children[3].lastChild;
+		const emailInput = form.children[4].lastChild;
+
+		if (nameInput.validity.valueMissing || emailInput.validity.valueMissing) {
+			alert("please fill in all fields");
+			return;
+		}
+
+		if (!emailInput.checkValidity()) {
+			alert("please enter a vaid email address");
+			return;
+		}
 	});
 
 	return form;
@@ -46,8 +57,6 @@ const createFormInputs = function () {
 
 	inputs.nameInput.input.placeholder = "";
 	inputs.emailInput.input.placeholder = "";
-
-	setEmailPattern(inputs.emailInput);
 
 	return inputs;
 };
