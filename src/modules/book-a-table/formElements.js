@@ -39,12 +39,6 @@ const createFormInputs = function () {
 		emailInput: createLabelledInput("email", "Email address"),
 	};
 
-	inputs.nameInput.input.setAttribute("required", true);
-	inputs.emailInput.input.setAttribute("required", true);
-
-	inputs.nameInput.input.placeholder = "";
-	inputs.emailInput.input.placeholder = "";
-
 	return inputs;
 };
 
@@ -54,6 +48,8 @@ const createLabelledInput = function (type, labelText) {
 
 	label.textContent = `${labelText}*:`;
 	input.type = type;
+	input.placeholder = "";
+	input.setAttribute("required", "required");
 
 	label.appendChild(input);
 
