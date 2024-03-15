@@ -5,30 +5,29 @@ const setEmailPattern = function (input) {
 
 // const checkRequiredInputs = function () {};
 
-// const checkPatternInputs = function () {};
+// const checkEmailInput = function () {};
 
 const checkFormIsValid = function (form) {
-	// const nameInput = form.children[1].lastChild;
-	// const emailInput = form.children[4].lastChild;
 	const requiredInputs = getRequiredInputs(form);
+	const emailInput = form.querySelector("input[type='email']");
 
 	requiredInputs.forEach(input => {
-		console.log(input.textContent);
 		if (input.validity.valueMissing) {
 			alert("please fill in all fields");
 			return;
 		}
 	});
 
-	// if (!emailInput.checkValidity()) {
-	// 	alert("please enter a vaid email address");
-	// 	return;
-	// }
+	if (!emailInput.checkValidity()) {
+		alert("please enter a valid input");
+		return;
+	}
 };
 
 const getRequiredInputs = function (form) {
 	return Array.from(form.children)
 		.map(child => child.lastChild)
+		.slice(0, -1)
 		.filter(input => input.required);
 };
 
