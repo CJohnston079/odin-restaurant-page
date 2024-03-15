@@ -45,13 +45,18 @@ const createFormInputs = function () {
 const createLabelledInput = function (type, labelText) {
 	const label = document.createElement("label");
 	const input = document.createElement("input");
+	const validationMessage = document.createElement("span");
 
-	label.textContent = `${labelText}*:`;
+	validationMessage.classList.add("validation-message", "hidden");
+	validationMessage.textContent = "Please enter valid input";
+
 	input.type = type;
 	input.placeholder = "";
 	input.setAttribute("required", "required");
 
+	label.textContent = `${labelText}*:`;
 	label.appendChild(input);
+	label.appendChild(validationMessage);
 
 	return { label, input };
 };
