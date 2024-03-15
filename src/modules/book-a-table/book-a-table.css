@@ -43,6 +43,7 @@ form {
 }
 
 label {
+	position: relative;
 	display: grid;
 	margin-bottom: 3rem;
 
@@ -124,4 +125,15 @@ form button {
 
 .dialog-closed .close {
 	display: none;
+}
+
+.validation-message {
+	position: absolute;
+	bottom: -1.5rem;
+
+	font-size: 0.8rem;
+	font-weight: 400;
+	text-transform: initial;
+	letter-spacing: normal;
+	color: white;
 }
