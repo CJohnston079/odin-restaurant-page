@@ -13,7 +13,7 @@ const checkFormIsValid = function (form) {
 
 const getRequiredInputs = function (form) {
 	return Array.from(form.children)
-		.map(child => child.lastChild)
+		.map(child => child.children[0])
 		.slice(0, -1)
 		.filter(input => input.required);
 };
