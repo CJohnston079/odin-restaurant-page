@@ -135,5 +135,6 @@ form button {
 	font-weight: 400;
 	text-transform: initial;
 	letter-spacing: normal;
+	letter-spacing: -0.01rem;
 	color: white;
 }
