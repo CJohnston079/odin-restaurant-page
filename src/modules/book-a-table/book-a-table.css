@@ -138,3 +138,12 @@ form button {
 	letter-spacing: -0.01rem;
 	color: white;
 }
+
+.validation-message.visible {
+	visibility: visible;
+	animation: fade 400ms;
+}
+
+.validation-message.hidden {
+	visibility: hidden;
+}
