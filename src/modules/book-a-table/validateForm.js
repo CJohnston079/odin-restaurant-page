@@ -21,7 +21,8 @@ const getRequiredInputs = function (form) {
 const checkRequiredInputs = function (requiredInputs) {
 	requiredInputs.forEach(input => {
 		if (input.validity.valueMissing) {
-			alert("please fill in all fields");
+			input.parentElement.lastChild.classList.remove("hidden");
+			input.parentElement.lastChild.classList.add("visible");
 			return;
 		}
 	});

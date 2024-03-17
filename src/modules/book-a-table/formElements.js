@@ -48,7 +48,7 @@ const createLabelledInput = function (type, labelText) {
 	const validationMessage = document.createElement("span");
 
 	validationMessage.classList.add("validation-message", "hidden");
-	validationMessage.textContent = "Please enter valid input";
+	validationMessage.textContent = "Please complete this field";
 
 	input.type = type;
 	input.placeholder = "";
