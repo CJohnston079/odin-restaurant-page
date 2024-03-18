@@ -1,5 +1,6 @@
 import { getGuests, getNextTwoWeeks, getTimes } from "../utils/utils.js";
 import { checkFormIsValid, hideValidationMessage } from "./validateForm.js";
+import { submitForm } from "./submitForm.js";
 
 const createForm = function () {
 	const form = document.createElement("form");
@@ -20,7 +21,7 @@ const createForm = function () {
 
 		if (isFormValid) {
 			console.log("form is valid");
-			// submitForm()
+			submitForm(form);
 		}
 	});
 
@@ -56,6 +57,7 @@ const createLabelledInput = function (type, labelText) {
 	validationMessage.classList.add("validation-message", "hidden");
 	validationMessage.textContent = "Please enter valid input";
 
+	input.name = labelText.toLowerCase().replaceAll(" ", "-");
 	input.type = type;
 	input.placeholder = "";
 	input.setAttribute("required", "required");
