@@ -42,4 +42,9 @@ const showValidationMessage = function (input, validationMessage = "Please enter
 	input.parentElement.lastChild.textContent = validationMessage;
 };
 
-export { setEmailPattern, checkFormIsValid };
+const hideValidationMessage = function (input) {
+	input.parentElement.lastChild.classList.remove("visible");
+	input.parentElement.lastChild.classList.add("hidden");
+};
+
+export { setEmailPattern, checkFormIsValid, hideValidationMessage };
