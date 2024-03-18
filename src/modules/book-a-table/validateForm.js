@@ -7,8 +7,10 @@ const checkFormIsValid = function (form) {
 	const requiredInputs = getRequiredInputs(form);
 	const emailInput = form.querySelector("input[type='email']");
 
-	checkEmailInput(emailInput);
-	checkRequiredInputs(requiredInputs);
+	const isEmailValid = checkEmailInput(emailInput);
+	const areInputsValid = checkRequiredInputs(requiredInputs);
+
+	return isEmailValid && areInputsValid;
 };
 
 const getRequiredInputs = function (form) {
@@ -24,16 +26,20 @@ const checkRequiredInputs = function (requiredInputs) {
 
 		if (input.validity.valueMissing) {
 			showValidationMessage(input, `Please enter your ${inputName}`);
-			return;
+			return false;
 		}
 	});
+
+	return true;
 };
 
 const checkEmailInput = function (emailInput) {
 	if (!emailInput.checkValidity()) {
 		showValidationMessage(emailInput, "Please enter a valid email address");
-		return;
+		return false;
 	}
+
+	return true;
 };
 
 const showValidationMessage = function (input, validationMessage = "Please enter valid input") {

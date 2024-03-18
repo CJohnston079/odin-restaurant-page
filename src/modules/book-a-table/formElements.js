@@ -15,7 +15,13 @@ const createForm = function () {
 
 	submitButton.addEventListener("click", e => {
 		e.preventDefault();
-		checkFormIsValid(form);
+
+		const isFormValid = checkFormIsValid(form);
+
+		if (isFormValid) {
+			console.log("form is valid");
+			// submitForm()
+		}
 	});
 
 	return form;
