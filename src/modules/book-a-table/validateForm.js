@@ -21,9 +21,7 @@ const getRequiredInputs = function (form) {
 const checkRequiredInputs = function (requiredInputs) {
 	requiredInputs.forEach(input => {
 		if (input.validity.valueMissing) {
-			input.parentElement.lastChild.classList.remove("hidden");
-			input.parentElement.lastChild.classList.add("visible");
-			input.parentElement.lastChild.textContent = "Please complete this field";
+			showValidationMessage(input, "Please complete this field");
 			return;
 		}
 	});
@@ -31,11 +29,15 @@ const checkRequiredInputs = function (requiredInputs) {
 
 const checkEmailInput = function (emailInput) {
 	if (!emailInput.checkValidity()) {
-		emailInput.parentElement.lastChild.classList.remove("hidden");
-		emailInput.parentElement.lastChild.classList.add("visible");
-		emailInput.parentElement.lastChild.textContent = "Please enter a valid email address";
+		showValidationMessage(emailInput, "Please enter a valid email address");
 		return;
 	}
+};
+
+const showValidationMessage = function (input, validationMessage = "Please enter valid input") {
+	input.parentElement.lastChild.classList.remove("hidden");
+	input.parentElement.lastChild.classList.add("visible");
+	input.parentElement.lastChild.textContent = validationMessage;
 };
 
 export { setEmailPattern, checkFormIsValid };
