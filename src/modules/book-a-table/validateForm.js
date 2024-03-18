@@ -20,8 +20,10 @@ const getRequiredInputs = function (form) {
 
 const checkRequiredInputs = function (requiredInputs) {
 	requiredInputs.forEach(input => {
+		const inputName = input.parentElement.textContent.split("*")[0].toLowerCase();
+
 		if (input.validity.valueMissing) {
-			showValidationMessage(input, "Please complete this field");
+			showValidationMessage(input, `Please enter your ${inputName}`);
 			return;
 		}
 	});
