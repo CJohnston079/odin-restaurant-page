@@ -7,15 +7,18 @@ const submitForm = function (form) {
 		email: form.querySelector("input[name='email-address']").value,
 	};
 
-	displayFormSubmittedMessage(formData);
+	displayFormSubmittedMessage(form, formData);
 
 	return formData;
 };
 
-const displayFormSubmittedMessage = function (data) {
+const displayFormSubmittedMessage = function (form, data) {
 	const bookingMessage = `Your table as been booked for ${data.numOfPeople} on ${data.date} at ${data.time}.`;
+	const submissionMessage = document.createElement("p");
+	submissionMessage.textContent = bookingMessage;
 
-	console.log(bookingMessage);
+	form.parentElement.appendChild(submissionMessage);
+	form.parentElement.removeChild(form);
 };
 
 export { submitForm };
