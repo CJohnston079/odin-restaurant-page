@@ -214,6 +214,11 @@ dialog button:hover {
     100% { transform: translateX(0); }
 }
 
+@keyframes slideY {
+  0% { transform: translateY(0.5rem); }
+  100% { transform: translateY(0); }
+}
+
 @keyframes nav-bounce {
     0% {
         padding-top: 0rem;
