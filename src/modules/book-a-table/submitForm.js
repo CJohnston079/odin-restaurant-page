@@ -25,16 +25,23 @@ const displayFormSubmittedMessage = function (form, bookingData) {
 const createFormSubmitElements = function (bookingData) {
 	const formSubmitElements = document.createElement("div");
 
-	const bookingMessage = `Your table as been booked for ${bookingData.numOfPeople} on ${bookingData.date} at ${bookingData.time}.`;
-	const submissionMessage = document.createElement("p");
-	submissionMessage.textContent = bookingMessage;
+	const heading = document.createElement("h2");
+	heading.textContent = "Booking successful";
 
-	const closeFormButton = createButton("Close");
+	const bookingMessage = document.createElement("p");
+	bookingMessage.textContent = `Your table as been booked for ${bookingData.numOfPeople} on ${bookingData.date} at ${bookingData.time}.`;
+
+	const confirmationMessage = document.createElement("p");
+	confirmationMessage.textContent = `A confirmation email has been sent to ${bookingData.email}.`;
+
+	const closeFormButton = createButton("Close this message");
 	closeFormButton.addEventListener("mousedown", () =>
 		closeDialog(document.querySelector("#book-a-table"), 0)
 	);
 
-	formSubmitElements.appendChild(submissionMessage);
+	formSubmitElements.appendChild(heading);
+	formSubmitElements.appendChild(bookingMessage);
+	formSubmitElements.appendChild(confirmationMessage);
 	formSubmitElements.appendChild(closeFormButton);
 
 	return formSubmitElements;
