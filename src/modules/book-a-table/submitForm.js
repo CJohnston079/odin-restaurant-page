@@ -2,7 +2,7 @@ import { createButton } from "./formElements";
 import { closeDialog } from "./dialogElements";
 
 const submitForm = function (form) {
-	const formData = {
+	const bookingData = {
 		date: form.querySelector("select[name='date']").value,
 		time: form.querySelector("select[name='time']").value,
 		numOfPeople: form.querySelector("select[name='number']").value,
@@ -10,13 +10,22 @@ const submitForm = function (form) {
 		email: form.querySelector("input[name='email-address']").value,
 	};
 
-	displayFormSubmittedMessage(form, formData);
+	displayFormSubmittedMessage(form, bookingData);
 
-	return formData;
+	return bookingData;
 };
 
-const displayFormSubmittedMessage = function (form, data) {
-	const bookingMessage = `Your table as been booked for ${data.numOfPeople} on ${data.date} at ${data.time}.`;
+const displayFormSubmittedMessage = function (form, bookingData) {
+	const formSubmitElements = createFormSubmitElements(bookingData);
+
+	form.parentElement.appendChild(formSubmitElements);
+	form.parentElement.removeChild(form);
+};
+
+const createFormSubmitElements = function (bookingData) {
+	const formSubmitElements = document.createElement("div");
+
+	const bookingMessage = `Your table as been booked for ${bookingData.numOfPeople} on ${bookingData.date} at ${bookingData.time}.`;
 	const submissionMessage = document.createElement("p");
 	submissionMessage.textContent = bookingMessage;
 
@@ -25,9 +34,10 @@ const displayFormSubmittedMessage = function (form, data) {
 		closeDialog(document.querySelector("#book-a-table"), 0)
 	);
 
-	form.parentElement.appendChild(submissionMessage);
-	form.parentElement.appendChild(closeFormButton);
-	form.parentElement.removeChild(form);
+	formSubmitElements.appendChild(submissionMessage);
+	formSubmitElements.appendChild(closeFormButton);
+
+	return formSubmitElements;
 };
 
 export { submitForm };
