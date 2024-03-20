@@ -1,3 +1,6 @@
+import { createButton } from "./formElements";
+import { closeDialog } from "./dialogElements";
+
 const submitForm = function (form) {
 	const formData = {
 		date: form.querySelector("select[name='date']").value,
@@ -17,7 +20,11 @@ const displayFormSubmittedMessage = function (form, data) {
 	const submissionMessage = document.createElement("p");
 	submissionMessage.textContent = bookingMessage;
 
+	const closeFormButton = createButton("Close");
+	closeFormButton.addEventListener("mousedown", () => closeDialog(closeFormButton.parentElement));
+
 	form.parentElement.appendChild(submissionMessage);
+	form.parentElement.appendChild(closeFormButton);
 	form.parentElement.removeChild(form);
 };
 
