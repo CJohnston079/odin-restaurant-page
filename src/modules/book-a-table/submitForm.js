@@ -21,7 +21,9 @@ const displayFormSubmittedMessage = function (form, data) {
 	submissionMessage.textContent = bookingMessage;
 
 	const closeFormButton = createButton("Close");
-	closeFormButton.addEventListener("mousedown", () => closeDialog(closeFormButton.parentElement));
+	closeFormButton.addEventListener("mousedown", () =>
+		closeDialog(document.querySelector("#book-a-table"), 0)
+	);
 
 	form.parentElement.appendChild(submissionMessage);
 	form.parentElement.appendChild(closeFormButton);

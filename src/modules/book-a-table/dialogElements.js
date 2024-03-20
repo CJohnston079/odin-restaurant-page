@@ -7,7 +7,7 @@ const createDialog = function () {
 	return dialog;
 };
 
-const closeDialog = function (dialog) {
+const closeDialog = function (dialog, timeout = 610) {
 	dialog.classList.remove("dialog-open");
 
 	setTimeout(() => {
@@ -16,7 +16,7 @@ const closeDialog = function (dialog) {
 
 	setTimeout(() => {
 		dialog.close();
-	}, 610);
+	}, timeout);
 };
 
 export { createDialog, closeDialog };
