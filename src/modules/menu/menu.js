@@ -1,5 +1,5 @@
 import "./menu.css";
-import testWine from "../../../data/menuItems";
+import wines from "../../../data/menuItems";
 
 const renderMenuItem = function (item) {
 	const container = document.createElement("div");
@@ -19,7 +19,7 @@ const createMenuSection = function () {
 	const section = document.createElement("section");
 	section.id = "menu";
 
-	const testMenuItem = renderMenuItem(testWine);
+	const testMenuItem = renderMenuItem(wines[1]);
 
 	section.append(testMenuItem);
 

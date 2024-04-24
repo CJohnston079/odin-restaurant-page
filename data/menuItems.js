@@ -79,6 +79,6 @@ const winesData = [
 	},
 ];
 
-const testWine = createWine({ ...winesData[0] });
+const wines = winesData.map(wine => createWine({ ...wine }));
 
-export default testWine;
+export default wines;
