@@ -1,21 +1,5 @@
 import "./menu.css";
-import {
-	createWine,
-	// createCocktail,
-	// createSpirit,
-	// createBottledDrink,
-	// createSoftDrink,
-	// createHotDrink,
-} from "./createDrinks";
-
-const testWine = createWine({
-	name: "chardonay",
-	bottlePrice: 19.95,
-	allergens: { isVegan: true },
-	country: "chile",
-	description: "fruity, tropical fruits",
-	wineType: "white",
-});
+import testWine from "../../../data/menuItems";
 
 const renderMenuItem = function (item) {
 	const container = document.createElement("div");
