@@ -1,25 +1,31 @@
 import "./menu.css";
 import wines from "../../../data/menuItems";
 
-const renderMenuItem = function (item) {
-	const container = document.createElement("div");
-	const name = document.createElement("h3");
-	const price = document.createElement("p");
+const renderMenuItems = function (items) {
+	const parent = document.createElement("div");
 
-	name.textContent = item.name;
-	price.textContent = item.price["750ml"];
+	items.forEach(item => {
+		const container = document.createElement("div");
+		const name = document.createElement("h3");
+		const price = document.createElement("p");
 
-	container.append(name);
-	container.append(price);
+		name.textContent = item.name;
+		price.textContent = item.price["750ml"];
 
-	return container;
+		container.append(name);
+		container.append(price);
+
+		parent.append(container);
+	});
+
+	return parent;
 };
 
 const createMenuSection = function () {
 	const section = document.createElement("section");
 	section.id = "menu";
 
-	const testMenuItem = renderMenuItem(wines[1]);
+	const testMenuItem = renderMenuItems(wines);
 
 	section.append(testMenuItem);
 
