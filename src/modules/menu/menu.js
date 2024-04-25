@@ -1,5 +1,8 @@
 import "./menu.css";
-import wines from "../../../data/menuItems";
+import winesData from "../../../data/menuItems";
+import { createWine } from "./createDrinks";
+
+const wines = winesData.map(wine => createWine({ ...wine }));
 
 const renderMenuItems = function (items) {
 	const parent = document.createElement("div");
