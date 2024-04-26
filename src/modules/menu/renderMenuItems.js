@@ -4,7 +4,7 @@ export default function renderMenuItems(items) {
 	items.forEach(item => {
 		const container = document.createElement("div");
 
-		const name = document.createElement("h3");
+		const name = document.createElement("h4");
 		const country = document.createElement("p");
 		const description = document.createElement("p");
 		const price = document.createElement("span");
