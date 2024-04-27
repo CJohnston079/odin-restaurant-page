@@ -24,7 +24,7 @@
 	},
 	{
 		"name": "Pinot Grigio",
-		"bottlePrice": 26.5,
+		"bottlePrice": 26.45,
 		"country": "Italy",
 		"description": "Est ultricies integer quis auctor elit sed vulputate.",
 		"wineType": "white"
@@ -63,7 +63,7 @@
 	},
 	{
 		"name": "Pouilly-Fumé",
-		"bottlePrice": 29.9,
+		"bottlePrice": 29.95,
 		"country": "France",
 		"description": "Vel facilisis volutpat est velit egestas dui id ornare.",
 		"wineType": "white"

@@ -3,6 +3,8 @@
 }
 
 h2 {
+	margin-bottom: 2rem;
+
 	font-family: "Poppins", sans-serif;
 	font-weight: 700;
 	font-size: 2rem;
@@ -14,6 +16,15 @@ h2 {
 	gap: 2rem;
 }
 
-.menu-item {
-	/* background-color: blue; */
+.menu-item h3 {
+	font-size: 1.5rem;
+}
+
+.menu-item p {
+	font-size: 1rem;
+}
+
+.menu-item span {
+	font-size: 1.5rem;
+	color: hsl(30, 50%, 80%);
 }
