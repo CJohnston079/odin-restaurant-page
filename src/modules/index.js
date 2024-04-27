@@ -84,3 +84,5 @@ navButtons.book.addEventListener("mousedown", () => {
 
 document.body.appendChild(sections.book);
 contentContainer.appendChild(sections.hero);
+
+appendSection("menu", "Menu"); // remove when done editing menu

@@ -1,3 +1,19 @@
 .banner:has(+ #menu) {
-    background-position: center 75%;
+	background-position: center 75%;
+}
+
+h2 {
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.menu-sections {
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 2rem;
+}
+
+.menu-item {
+	/* background-color: blue; */
 }

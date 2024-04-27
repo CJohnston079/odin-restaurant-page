@@ -16,7 +16,7 @@ const createMenuSection = function () {
 };
 
 const createMenuSubheading = function (headingContent) {
-	const subheading = document.createElement("h3");
+	const subheading = document.createElement("h2");
 
 	subheading.textContent = headingContent;
 

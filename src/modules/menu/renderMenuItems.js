@@ -1,13 +1,17 @@
 export default function renderMenuItems(items) {
 	const parent = document.createElement("div");
 
+	parent.classList.add("menu-sections");
+
 	items.forEach(item => {
 		const container = document.createElement("div");
 
-		const name = document.createElement("h4");
+		const name = document.createElement("h3");
 		const country = document.createElement("p");
 		const description = document.createElement("p");
 		const price = document.createElement("span");
+
+		container.classList.add("menu-item");
 
 		name.textContent = item.name;
 		country.textContent = item.country;
