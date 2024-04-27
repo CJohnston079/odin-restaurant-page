@@ -3,19 +3,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,22 +92,35 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
 body {
 	line-height: 1;
 }
-ol, ul {
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
 	content: none;
 }
 table {
@@ -47,193 +128,214 @@ table {
 	border-spacing: 0;
 }
 button {
-    border: none;
-    padding-inline: 0;
+	border: none;
+	padding-inline: 0;
 }
 button:focus-within {
-    outline: none;
+	outline: none;
 }
 
 :root {
-    --accent-color: hsl(5, 100%, 55%)
+	--accent-color: hsl(5, 100%, 55%);
 }
 
 body {
-    font-family: 'Playfair Display', serif;
-    background-color: black;
+	font-family: "Playfair Display", serif;
+	background-color: black;
 }
 
 header {
-    position: fixed;
-    inset: 0;
+	position: fixed;
+	inset: 0;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem max(10vw, 4rem);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem max(10vw, 4rem);
 
-    min-height: 3rem;
-    max-height: fit-content;
+	min-height: 3rem;
+	max-height: fit-content;
 
-    color: white;
+	color: white;
 
-    background-color: black;
+	background-color: black;
 }
 
 header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 nav {
-    display: flex;
-    gap: 1rem;
+	display: flex;
+	gap: 1rem;
 }
 
 nav button {
-    margin-right: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: solid 3px transparent;
+	margin-right: 1rem;
+	padding: 0.5rem 0;
+	border-bottom: solid 3px transparent;
 
-    font-family: 'Poppins';
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
+	font-family: "Poppins", sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
 
-    background: none;
+	background: none;
 
-    transform: translateY(1.5px);
-    transition: border 200ms, color 200ms;
-    cursor: pointer;
+	transform: translateY(1.5px);
+	transition: border 200ms, color 200ms;
+	cursor: pointer;
 }
 
 nav button:hover {
-    border-bottom: solid 3px white;
-    transition: border 400ms, color 400ms;
+	border-bottom: solid 3px white;
+	transition: border 400ms, color 400ms;
 }
 
 nav button.active,
 nav button:active {
-    border-bottom: solid 3px var(--accent-color);
-    color: var(--accent-color);
-    transition: border 100ms, color 100ms;
+	border-bottom: solid 3px var(--accent-color);
+	color: var(--accent-color);
+	transition: border 100ms, color 100ms;
 }
 
 nav button:last-child {
-    margin: 0;
-    border: solid 3px white;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    
-    transform: translateY(0);
-    transition: background-color 400ms, border-color 400ms, filter 400ms;
+	margin: 0;
+	border: solid 3px white;
+	border-radius: 4px;
+	padding: 0.5rem 1rem;
+
+	transform: translateY(0);
+	transition: background-color 400ms, border-color 400ms, filter 400ms;
 }
 
 nav button:last-child:hover {
-    border-color: var(--accent-color);
-    color: white;
-    background-color: var(--accent-color);
+	border-color: var(--accent-color);
+	color: white;
+	background-color: var(--accent-color);
 }
 
 nav button.active {
-    color: var(--accent-color);
-    animation: nav-bounce 200ms ease-out 2 alternate-reverse;
+	color: var(--accent-color);
+	animation: nav-bounce 200ms ease-out 2 alternate-reverse;
 }
 
 nav button.active:last-child {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    background: none;
-    animation: none;
+	border-color: var(--accent-color);
+	color: var(--accent-color);
+	background: none;
+	animation: none;
 }
 
 main {
-    margin-top: 7rem;
-    color: white;
+	margin-top: 7rem;
+	color: white;
 }
 
 section {
-    height: 100%;
-    padding: 4rem;
-    padding: 4rem max(10vw, 4rem);
+	height: 100%;
+	padding: 4rem;
+	padding: 4rem max(10vw, 4rem);
 
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: overlay;
 }
 
 section h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
-    font-weight: 200;
-    line-height: 3rem;
-    text-transform: uppercase;
-    word-spacing: 0.5rem;
-    letter-spacing: -0.05rem;
+	font-family: "Poppins", sans-serif;
+	font-size: 4rem;
+	font-weight: 200;
+	line-height: 3rem;
+	text-transform: uppercase;
+	word-spacing: 0.5rem;
+	letter-spacing: -0.05rem;
 }
 
 section p {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+	font-size: 1.25rem;
+	line-height: 1.5rem;
 }
 
 section button,
 dialog button {
-    border-radius: 4px;
-    padding: 1rem 2rem;
-    width: fit-content;
+	border-radius: 4px;
+	padding: 1rem 2rem;
+	width: fit-content;
 
-    font-family: 'Poppins';
-    font-size: 1rem;
-    font-weight: 500;
-    color: white;
-    
-    background-color: hsl(5, 100%, 35%);
-    background: linear-gradient(150deg, hsl(5, 100%, 55%), hsl(5, 100%, 35%));
-    
-    transition: filter 400ms;
-    cursor: pointer;
+	font-family: "Poppins", sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	color: white;
+
+	background-color: hsl(5, 100%, 35%);
+	background: linear-gradient(150deg, hsl(5, 100%, 55%), hsl(5, 100%, 35%));
+
+	transition: filter 400ms;
+	cursor: pointer;
 }
 
 section button:hover,
 dialog button:hover {
-    filter: brightness(1.2);
+	filter: brightness(1.2);
 }
 
 @keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 @keyframes slideX {
-    0% { transform: translateX(2rem); }
-    100% { transform: translateX(0); }
+	0% {
+		transform: translateX(2rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
 }
 
 @keyframes slideY {
-  0% { transform: translateY(0.5rem); }
-  100% { transform: translateY(0); }
+	0% {
+		transform: translateY(0.5rem);
+	}
+	100% {
+		transform: translateY(0);
+	}
 }
 
 @keyframes nav-bounce {
-    0% {
-        padding-top: 0rem;
-        padding-bottom: 0.5rem;
-    }
-    100% {
-    }
+	0% {
+		padding-top: 0rem;
+		padding-bottom: 0.5rem;
+	}
+	100% {
+	}
 }
 
 @keyframes scale-2d {
-    0% { transform: scale(0, 0); display: none; }
-    100% { transform: scale(1, 1); }
+	0% {
+		transform: scale(0, 0);
+		display: none;
+	}
+	100% {
+		transform: scale(1, 1);
+	}
 }
 
 @keyframes border-round-to-sharp {
-    0% { border-radius: 100% 0% 50% 100%; }
-    100% { border-radius: 0%; }
+	0% {
+		border-radius: 100% 0% 50% 100%;
+	}
+	100% {
+		border-radius: 0%;
+	}
 }
