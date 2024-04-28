@@ -136,7 +136,8 @@ button:focus-within {
 }
 
 :root {
-	--accent-color: hsl(5, 100%, 55%);
+	--cl-accent: hsl(5, 100%, 55%);
+	/* --cl-background: black; */
 }
 
 body {
@@ -198,8 +199,8 @@ nav button:hover {
 
 nav button.active,
 nav button:active {
-	border-bottom: solid 3px var(--accent-color);
-	color: var(--accent-color);
+	border-bottom: solid 3px var(--cl-accent);
+	color: var(--cl-accent);
 	transition: border 100ms, color 100ms;
 }
 
@@ -214,19 +215,19 @@ nav button:last-child {
 }
 
 nav button:last-child:hover {
-	border-color: var(--accent-color);
+	border-color: var(--cl-accent);
 	color: white;
-	background-color: var(--accent-color);
+	background-color: var(--cl-accent);
 }
 
 nav button.active {
-	color: var(--accent-color);
+	color: var(--cl-accent);
 	animation: nav-bounce 200ms ease-out 2 alternate-reverse;
 }
 
 nav button.active:last-child {
-	border-color: var(--accent-color);
-	color: var(--accent-color);
+	border-color: var(--cl-accent);
+	color: var(--cl-accent);
 	background: none;
 	animation: none;
 }
