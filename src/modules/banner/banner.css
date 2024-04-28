@@ -1,19 +1,22 @@
 .banner {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 
-    height: 8rem;
+	height: 8rem;
 
-    background-image: url(../../assets/images/hero-background.jpg), linear-gradient(60deg, hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0) 50%);
-    background-position: center bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
+	color: white;
 
-    transition: 800ms;
+	background-image: url(../../assets/images/hero-background.jpg),
+		linear-gradient(60deg, hsla(0, 0%, 0%, 0.5), hsla(0, 0%, 0%, 0) 50%);
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: overlay;
+
+	transition: 800ms;
 }
 
 .banner * {
-    animation: fade 1200ms, slideX 1200ms;
-    animation-fill-mode: backwards;
+	animation: fade 1200ms, slideX 1200ms;
+	animation-fill-mode: backwards;
 }

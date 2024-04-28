@@ -136,13 +136,18 @@ button:focus-within {
 }
 
 :root {
-	--cl-accent: hsl(5, 100%, 55%);
-	/* --cl-background: black; */
+	--cl-tomato: hsl(5, 100%, 55%);
+	--cl-pasta: hsl(40, 30%, 80%);
+
+	--cl-primary-accent: var(--cl-tomato);
+	--cl-secondary-accent: var(--cl-pasta);
+	--cl-background: black;
+	--cl-foreground: white;
 }
 
 body {
 	font-family: "Playfair Display", serif;
-	background-color: black;
+	background-color: var(--cl-background);
 }
 
 header {
@@ -199,8 +204,8 @@ nav button:hover {
 
 nav button.active,
 nav button:active {
-	border-bottom: solid 3px var(--cl-accent);
-	color: var(--cl-accent);
+	border-bottom: solid 3px var(--cl-primary-accent);
+	color: var(--cl-primary-accent);
 	transition: border 100ms, color 100ms;
 }
 
@@ -215,26 +220,26 @@ nav button:last-child {
 }
 
 nav button:last-child:hover {
-	border-color: var(--cl-accent);
+	border-color: var(--cl-primary-accent);
 	color: white;
-	background-color: var(--cl-accent);
+	background-color: var(--cl-primary-accent);
 }
 
 nav button.active {
-	color: var(--cl-accent);
+	color: var(--cl-primary-accent);
 	animation: nav-bounce 200ms ease-out 2 alternate-reverse;
 }
 
 nav button.active:last-child {
-	border-color: var(--cl-accent);
-	color: var(--cl-accent);
+	border-color: var(--cl-primary-accent);
+	color: var(--cl-primary-accent);
 	background: none;
 	animation: none;
 }
 
 main {
 	margin-top: 7rem;
-	color: white;
+	color: var(--cl-foreground);
 }
 
 section {
@@ -284,6 +289,16 @@ dialog button {
 section button:hover,
 dialog button:hover {
 	filter: brightness(1.2);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--cl-background: var(--cl-pasta);
+		--cl-foreground: black;
+
+		--cl-primary-accent: var(--cl-pasta);
+		--cl-secondary-accent: var(--cl-tomato);
+	}
 }
 
 @keyframes fade {
