@@ -125,5 +125,26 @@
 		"country": "Australia",
 		"description": "Convallis aenean et tortor at risus.",
 		"wineType": "red"
+	},
+	{
+		"name": "Grenache",
+		"bottlePrice": 37.2,
+		"country": "France",
+		"description": "Tincidunt lobortis feugiat vivamus at augue.",
+		"wineType": "rosé"
+	},
+	{
+		"name": "Pinot Noir",
+		"bottlePrice": 35.45,
+		"country": "France",
+		"description": "Ac orci phasellus egestas tellus rutrum.",
+		"wineType": "rosé"
+	},
+	{
+		"name": "Cinsault",
+		"bottlePrice": 22.25,
+		"country": "France",
+		"description": "Easy-drinking from sunny Languedoc.",
+		"wineType": "rosé"
 	}
 ]
