@@ -67,5 +67,63 @@
 		"country": "France",
 		"description": "Vel facilisis volutpat est velit egestas dui id ornare.",
 		"wineType": "white"
+	},
+	{
+		"name": "Tempranillo Garnacha",
+		"bottlePrice": 20.45,
+		"country": "Spain",
+		"description": "Tincidunt vitae semper quis lectus nulla.",
+		"wineType": "red"
+	},
+	{
+		"name": "Montepulciano D’Abruzzo",
+		"bottlePrice": 23.65,
+		"country": "Italy",
+		"description": "Nunc congue nisi vitae suscipit tellus mauris.",
+		"wineType": "red",
+		"sizes": {
+			"175ML": 6.8,
+			"250ML": 8.55,
+			"BOTTLE": 23.65
+		}
+	},
+	{
+		"name": "Sangiovese",
+		"bottlePrice": 23.95,
+		"country": "Italy",
+		"description": "Pretium viverra suspendisse potenti nullam ac.",
+		"wineType": "red",
+		"allergens": { "vegan": true }
+	},
+	{
+		"name": "Merlot",
+		"bottlePrice": 25.65,
+		"country": "Chile",
+		"description": "Nisl tincidunt eget nullam non nisi est.",
+		"wineType": "red",
+		"allergens": { "vegan": true }
+	},
+	{
+		"name": "Malbec",
+		"bottlePrice": 29.95,
+		"country": "Argentina",
+		"description": "Metus vulputate eu scelerisque felis.",
+		"wineType": "red",
+		"allergens": { "vegan": true }
+	},
+	{
+		"name": "Chianti",
+		"bottlePrice": 26.95,
+		"country": "Italy",
+		"description": "Viverra nam libero justo laoreet sit.",
+		"wineType": "red",
+		"allergens": { "vegan": true }
+	},
+	{
+		"name": "Shiraz Viognier",
+		"bottlePrice": 26.45,
+		"country": "Australia",
+		"description": "Convallis aenean et tortor at risus.",
+		"wineType": "red"
 	}
 ]
